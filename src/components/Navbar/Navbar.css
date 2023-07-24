@@ -1,6 +1,6 @@
 .navb{
-    background-color: #000000;
-    backdrop-filter: blur(1px);
+    background-color: hsl(231, 34%, 12%);
+    /* backdrop-filter: blur(1px); */
     
 }
 

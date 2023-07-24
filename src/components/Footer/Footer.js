@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Footer.css"
+import { NavLink } from 'react-router-dom'
 const Footer = () => {
   return (
     <>
@@ -10,7 +11,14 @@ const Footer = () => {
             PICT IEEE Student Branch
           </div>
 
-          <div class="col-12 col-sm-4 text-center my-2 pt-1">PISB Web Team</div>
+          <div class="col-12 col-sm-4 text-center my-2 pt-1">
+              <NavLink
+                  to="/ourteam"
+                  className="text-decoration-none text-light"
+                >
+                  Developed by : Web Team
+                </NavLink>
+          </div>
 
           <div class="col-12 col-sm-4 text-center text-sm-end my-2 d-none d-sm-block px-sm-5">
             <i class="bi bi-linkedin mx-2"></i>

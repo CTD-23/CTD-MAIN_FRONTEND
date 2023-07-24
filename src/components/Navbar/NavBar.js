@@ -1,13 +1,17 @@
 import React from "react";
-import "./Navbar.css"
+import "./Navbar.css";
+import { NavLink } from "react-router-dom";
 const NavBar = () => {
   return (
     <>
-      <nav class="navbar navbar-expand-lg navb navbar-dark text-light p-sm-1 p-2" >
+      <nav class="navbar navbar-expand-lg navb navbar-dark text-light p-sm-1 p-2">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-          <img src="https://i.postimg.cc/rFvmtXSY/pisb.png" alt="" class="img-style" 
-          />
+            <img
+              src="https://i.postimg.cc/rFvmtXSY/pisb.png"
+              alt=""
+              class="img-style"
+            />
           </a>
           <button
             class="navbar-toggler"
@@ -23,31 +27,49 @@ const NavBar = () => {
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item text-light mx-2">
-                <a class="nav-link" aria-current="page" href="#">
+                <NavLink
+                  to="/"
+                  className="text-decoration-none nav-link"
+                >
                   Home
-                </a>
+                </NavLink>
               </li>
+
               <li class="nav-item text-light mx-2">
-                <a class="nav-link" aria-current="page" href="#">
+                <NavLink
+                  to="/events"
+                  className="text-decoration-none nav-link"
+                >
                   Events
-                </a>
+                </NavLink>
               </li>
+
               <li class="nav-item text-light mx-2">
-                <a class="nav-link" aria-current="page" href="#">
-                  About us
-                </a>
+                <NavLink
+                  to="/aboutus"
+                  className="text-decoration-none nav-link"
+                >
+                  About Us
+                </NavLink>
               </li>
+
               <li class="nav-item text-light mx-2">
-                <a class="nav-link" aria-current="page" href="#">
-                  Contact us
-                </a>
+                <NavLink
+                  to="/contactus"
+                  className="text-decoration-none nav-link"
+                >
+                  Contact Us
+                </NavLink>
               </li>
-              <li class="nav-item mx-2">
-                <a class="nav-link" aria-current="page" href="#">
+
+              <li class="nav-item text-light mx-2">
+                <NavLink
+                  to="/login"
+                  className="text-decoration-none nav-link"
+                >
                   Login
-                </a>
+                </NavLink>
               </li>
-              
             </ul>
           </div>
         </div>
