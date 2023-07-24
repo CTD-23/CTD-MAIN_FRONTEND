@@ -1,0 +1,16 @@
+
+.singlerow {
+    display: flex;
+    justify-content: center;
+}
+
+
+.containercard{
+    display: flex;
+    justify-content: center;
+}
+
+.heading {
+    color: white;
+    margin: 20px 0px;
+}
