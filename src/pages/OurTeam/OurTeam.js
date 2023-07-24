@@ -17,12 +17,12 @@ const OurTeam = () => {
                 <div className="p-4">
                   <img
                     className="card-img-top fade-in"
-                    src="https://i.postimg.cc/pXhBK5rJ/1683655431329.jpg"
+                    src="https://i.postimg.cc/FsWSGd3v/Virat-Kohli22-06-2021-06-42-06.png"
                   />
                 </div>
 
                 <h5 className="card-title text-white text-center">
-                  Maheshwar Bhosale
+                  Virat Kohli
                 </h5>
                 <p className="card-title text-white text-center">
                   Front-end Developer
@@ -40,12 +40,12 @@ const OurTeam = () => {
                 <div className="p-4">
                   <img
                     className="card-img-top fade-in"
-                    src="https://i.postimg.cc/pXhBK5rJ/1683655431329.jpg"
+                    src="https://i.postimg.cc/FsWSGd3v/Virat-Kohli22-06-2021-06-42-06.png"
                   />
                 </div>
 
                 <h5 className="card-title text-white text-center">
-                  Maheshwar Bhosale
+                  Virat Kohli
                 </h5>
                 <p className="card-title text-white text-center">
                   Front-end Developer
@@ -63,12 +63,12 @@ const OurTeam = () => {
                 <div className="p-4">
                   <img
                     className="card-img-top fade-in"
-                    src="https://i.postimg.cc/pXhBK5rJ/1683655431329.jpg"
+                    src="https://i.postimg.cc/FsWSGd3v/Virat-Kohli22-06-2021-06-42-06.png"
                   />
                 </div>
 
                 <h5 className="card-title text-white text-center">
-                  Maheshwar Bhosale
+                  Virat Kohli
                 </h5>
                 <p className="card-title text-white text-center">
                   Front-end Developer
@@ -86,12 +86,12 @@ const OurTeam = () => {
                 <div className="p-4">
                   <img
                     className="card-img-top fade-in"
-                    src="https://i.postimg.cc/pXhBK5rJ/1683655431329.jpg"
+                    src="https://i.postimg.cc/FsWSGd3v/Virat-Kohli22-06-2021-06-42-06.png"
                   />
                 </div>
 
                 <h5 className="card-title text-white text-center">
-                  Maheshwar Bhosale
+                  Virat Kohli
                 </h5>
                 <p className="card-title text-white text-center">
                   Front-end Developer
@@ -109,12 +109,12 @@ const OurTeam = () => {
                 <div className="p-4">
                   <img
                     className="card-img-top fade-in"
-                    src="https://i.postimg.cc/pXhBK5rJ/1683655431329.jpg"
+                    src="https://i.postimg.cc/FsWSGd3v/Virat-Kohli22-06-2021-06-42-06.png"
                   />
                 </div>
 
                 <h5 className="card-title text-white text-center">
-                  Maheshwar Bhosale
+                  Virat Kohli
                 </h5>
                 <p className="card-title text-white text-center">
                   Front-end Developer
@@ -132,12 +132,12 @@ const OurTeam = () => {
                 <div className="p-4">
                   <img
                     className="card-img-top fade-in"
-                    src="https://i.postimg.cc/pXhBK5rJ/1683655431329.jpg"
+                    src="https://i.postimg.cc/FsWSGd3v/Virat-Kohli22-06-2021-06-42-06.png"
                   />
                 </div>
 
                 <h5 className="card-title text-white text-center">
-                  Maheshwar Bhosale
+                  Virat Kohli
                 </h5>
                 <p className="card-title text-white text-center">
                   Front-end Developer
