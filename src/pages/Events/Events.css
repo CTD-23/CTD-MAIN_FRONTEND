@@ -1,0 +1,19 @@
+.navbar a{
+    color: white;
+}
+h1{
+    margin-top: 35px;
+    font-size: 50px;
+}
+
+
+
+.cardc{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    
+}
