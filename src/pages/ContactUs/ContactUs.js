@@ -1,9 +1,34 @@
 import React from 'react'
+import "./ContactUs.css";
+import Contacts from "./Contact";
+import Contactcard from '../../components/ContactCard/ContactCard';
 
 const ContactUs = () => {
+
   return (
-    <div>ContactUs</div>
+    <div>
+      <div class="heading text-center">
+        <h1>Get In Touch With Us</h1>
+      </div>
+      <div class="container-fluid containercard">
+        <div class="row singlerow gx-5">
+
+          {Contacts.map((contact) => {
+            return<Contactcard 
+              name={contact.name} 
+              contactnumber={contact.contactnumber} 
+              key={contact.key} 
+              image={contact.image} 
+             />
+          })}
+
+        </div>
+      </div>
+          <div className="mb-5"></div>
+
+    </div>
   )
+
 }
 
-export default ContactUs
+export default ContactUs;

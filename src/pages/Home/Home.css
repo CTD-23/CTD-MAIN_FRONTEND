@@ -1,0 +1,21 @@
+.logobox{
+
+    margin-top: 14vh;    
+}
+
+.logoImg{
+    max-width: 45%;
+}
+
+@media only screen and (max-width:768px){
+    .logobox{
+        margin-top: 30vh;
+        
+    }
+
+    .logoImg{
+        max-width: 87%;
+    }
+    
+
+}
