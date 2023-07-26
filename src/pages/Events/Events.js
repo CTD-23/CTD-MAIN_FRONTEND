@@ -38,7 +38,7 @@ const Events = () => {
   ]
   return (
     <>
-      <h1 class="text-light text-center ">EVENTS</h1>
+      <h1 class="text-light text-center h12">EVENTS</h1>
 
 
       <div class="cardc">

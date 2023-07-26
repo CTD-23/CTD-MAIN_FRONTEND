@@ -4,9 +4,9 @@ import "./EventsCard.css"
 const EventsCard = (props) => {
   return (
     <>
-    <div class="card ">
-          <img class="m-auto img-fluid p-2" src="https://i.postimg.cc/SKQq1t7X/datawiz.png" alt="NTH logo" />
-          <div class="card-body">
+    <div class="card card12 ">
+          <img class="m-auto img-fluid img-fluid12 p-2" src="https://i.postimg.cc/SKQq1t7X/datawiz.png" alt="NTH logo" />
+          <div class="card-body card-body12">
             <h5 class="card-title fs-4 text-center">{props.shortname}</h5>
             <div class="btnc">
               <button class="btn detail" data-bs-toggle="modal"

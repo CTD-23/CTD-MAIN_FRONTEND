@@ -6,7 +6,7 @@
 
 
 
- .card{
+ .card12{
     width: auto;
     min-width: 270px;
    width: 18rem;
@@ -23,7 +23,7 @@
    margin: 20px;
    overflow: hidden;
 }
-.img-fluid {
+.img-fluid12 {
     background-color: transparent;
     color: #fffff0;
     min-height: 150px;
@@ -31,23 +31,23 @@
     transform: translateY(40%);
     transition-duration: 0.5s;
 }
-.card:not(:hover,:focus) .card-body{
+.card12:not(:hover,:focus) .card-body12{
     transform: translateY(200px);
     transition-duration: 0.5s;
 }
 
-.card:is(:hover){
+.card12:is(:hover){
     scale: 1.002;
     transform: rotateY(0deg);
     opacity: 100;
     transition: ease-in 1s;
 }
-.card:is(:hover) .card-body{
+.card12:is(:hover) .card-body{
     transform: translateX(0);
     transition: transform ease-in-out 1s;
     transition-delay: 0.2s;
 }
-.card:is(:hover) img{
+.card12:is(:hover) img{
     transform: translateY(0px);
     transition: ease-in-out 0.2s;
     border-bottom: 4px solid #ffffff;
