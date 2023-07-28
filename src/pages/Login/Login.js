@@ -2,14 +2,56 @@ import React from "react";
 import "./login.css";
 import axios from "axios";
 import { useState } from "react";
-
+import axiosInstance from "../../utils/apis";
+import { useNavigate } from "react-router";
 const Login = () => {
 
+  const defaultCredentials =  {
+    Username : "", 
+    password : "", 
+  }
+  const [loginCredentials, setLoginCredentials] = useState(defaultCredentials)
+
+  const handleChange = (event) =>{
+    const name  = event.target.name;
+    const value = event.target.value ;
+
+    setLoginCredentials({...loginCredentials, [name]:value});
+  }
+
+  const navigate = useNavigate();
+  const loginUser = (loginPayload)=>{
+    const loginEndpoint = "/api/login";
+    axiosInstance.post(loginEndpoint, loginPayload)
+    .then((response)=>{
+      if(response.data.success)
+      {
+        localStorage.setItem("isLogin", true);
+        localStorage.setItem("userEmail", response.data.user.email)
+        alert("Login successful");
+        navigate("/"); 
+      }
+      else{
+        console.log("login failed");
+      }
+    })
+    .catch((error)=>{
+      alert(error.response.data.error);
+      setLoginCredentials(defaultCredentials)
+    })
+  }
+
+  const submitLoginForm = (e) =>{
+    e.preventDefault();
+    loginUser(loginCredentials);
+
+  }
+  
   return (
     <div>
       <div className="mt-sm-5 mt-0">
         <div className="container cont text-white p-4 p-sm-4 mt-sm-0 log-style">
-          <form>
+          <form onSubmit={submitLoginForm}>
             <div className="title mb-4 text-center">
               <h1>Sign in</h1>
               <small>We are happy to have you back.</small>
@@ -20,6 +62,8 @@ const Login = () => {
                 className="form-control form-control-lg fs-6 input-style"
                 placeholder="&#xF32C;  Email address"
                 name="Username"
+                onChange={handleChange}
+                value={loginCredentials.Username}
               />
             </div>
             <div className="input-group mb-3">
@@ -28,6 +72,8 @@ const Login = () => {
                 className="form-control form-control-lg fs-6 input-style"
                 placeholder="&#xF44E;  Password"
                 name="password"
+                onChange={handleChange}
+                value = {loginCredentials.password}
               />
             </div>
 
