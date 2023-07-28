@@ -1,7 +1,30 @@
 import React from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
+import axiosInstance from "../../utils/apis"
+
 const NavBar = () => {
+
+  const userLogout = () => {
+    const userEmail = localStorage.getItem("userEmail")
+    localStorage.removeItem("isLogin");
+    localStorage.removeItem("userEmail");
+
+    const logoutEndpoint = "/api/logout/"
+
+    const logoutPayload = {"email" : userEmail}
+    axiosInstance.get(logoutEndpoint, logoutPayload)
+    .then((resposne)=>{
+      console.log(resposne.data)
+    })
+    .catch((error)=>{
+      console.log(error);
+    })
+  }
+  const handleLogout = (e) =>{
+    userLogout();
+  }
+  
   return (
     <>
       <nav class="navbar navbar-expand-lg navb navbar-dark text-light p-sm-1 p-2">
@@ -68,6 +91,15 @@ const NavBar = () => {
                   className="text-decoration-none nav-link"
                 >
                   Login
+                </NavLink>
+              </li>
+
+              <li class="nav-item text-light mx-2" onClick={handleLogout}>
+                <NavLink
+                  to="/login"
+                  className="text-decoration-none nav-link"
+                >
+                  Logout
                 </NavLink>
               </li>
             </ul>
