@@ -4,42 +4,6 @@ import axios from "axios";
 import { useState } from "react";
 
 const Login = () => {
-  const [formData, setFormData] = useState({
-    Username: "",
-    password: "",
-  });
-
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    //    console.log(formData,"<-This is FormData");
-    const loginPayload = {
-      Username: formData.Username,
-      password: formData.password,
-    };
-    
-    const instance = axios.create({
-        baseURL: 'http://localhost:4000/',
-      });
-      
-      // Later, use the 'instance' to make requests
-    console.log(loginPayload);
-    instance
-      .post("/api/login", loginPayload)
-      .then((response) => {
-        console.log(response)
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
 
   return (
     <div>
@@ -56,8 +20,6 @@ const Login = () => {
                 className="form-control form-control-lg fs-6 input-style"
                 placeholder="&#xF32C;  Email address"
                 name="Username"
-                value={formData.Username}
-                onChange={handleInputChange}
               />
             </div>
             <div className="input-group mb-3">
@@ -66,8 +28,6 @@ const Login = () => {
                 className="form-control form-control-lg fs-6 input-style"
                 placeholder="&#xF44E;  Password"
                 name="password"
-                value={formData.password}
-                onChange={handleInputChange}
               />
             </div>
 
@@ -84,7 +44,6 @@ const Login = () => {
               <button
                 className="btn btn-lg w-100 fs-6"
                 type="submit"
-                onClick={handleSubmit}
               >
                 Login
               </button>
