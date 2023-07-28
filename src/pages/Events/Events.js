@@ -5,7 +5,7 @@ const Events = () => {
   const data = [
     {
       key:0,
-      shortname:"hello",
+      shortname:"NCC",
       name:"hello",
       detail:"hello",
       rules:"hello",
@@ -13,7 +13,7 @@ const Events = () => {
     },
     {
       key:1,
-      shortname:"hello",
+      shortname:"RC",
       name:"hello",
       detail:"hello",
       rules:"hello",
@@ -21,15 +21,7 @@ const Events = () => {
     },
     {
       key:2,
-      shortname:"hello",
-      name:"hello",
-      detail:"hello",
-      rules:"hello",
-      contacts:"hello"
-    },
-    {
-      key:3,
-      shortname:"hello",
+      shortname:"Datawiz",
       name:"hello",
       detail:"hello",
       rules:"hello",
