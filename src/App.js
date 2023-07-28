@@ -9,7 +9,7 @@ import Events from "./pages/Events/Events";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import OurTeam from "./pages/OurTeam/OurTeam";
-
+import ResetPassword from "./pages/Reset Password/ResetPassword";
 function App() {
   return (
     <div>
@@ -19,12 +19,13 @@ function App() {
       <div>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/AboutUs" element={<AboutUs />} />
-          <Route exact path="/ContactUs" element={<ContactUs />} />
-          <Route exact path="/Events" element={<Events />} />
-          <Route exact path="/Login" element={<Login />} />
-          <Route exact path="/Register" element={<Register />} />
-          <Route exact path="/OurTeam" element={<OurTeam />} />
+          <Route exact path="/aboutus" element={<AboutUs />} />
+          <Route exact path="/contactus" element={<ContactUs />} />
+          <Route exact path="/events" element={<Events />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/register" element={<Register />} />
+          <Route exact path="/ourteam" element={<OurTeam />} />
+          <Route exact path="/resetpassword/:token" element={<ResetPassword />} />
         </Routes>
       </div>
       <div>

@@ -6,49 +6,79 @@ import axiosInstance from "../../utils/apis";
 import { useNavigate } from "react-router";
 const Login = () => {
 
-  const defaultCredentials =  {
-    Username : "", 
-    password : "", 
+  const defaultCredentials = {
+    Username: "",
+    password: "",
   }
   const [loginCredentials, setLoginCredentials] = useState(defaultCredentials)
 
-  const handleChange = (event) =>{
-    const name  = event.target.name;
-    const value = event.target.value ;
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
 
-    setLoginCredentials({...loginCredentials, [name]:value});
+    setLoginCredentials({ ...loginCredentials, [name]: value });
   }
 
   const navigate = useNavigate();
-  const loginUser = (loginPayload)=>{
+  const loginUser = (loginPayload) => {
     const loginEndpoint = "/api/login";
     axiosInstance.post(loginEndpoint, loginPayload)
-    .then((response)=>{
-      if(response.data.success)
-      {
-        localStorage.setItem("isLogin", true);
-        localStorage.setItem("userEmail", response.data.user.email)
-        alert("Login successful");
-        navigate("/"); 
-      }
-      else{
-        console.log("login failed");
-      }
-    })
-    .catch((error)=>{
-      alert(error.response.data.error);
-      setLoginCredentials(defaultCredentials)
-    })
+      .then((response) => {
+        if (response.data.success) {
+          localStorage.setItem("isLogin", true);
+          localStorage.setItem("userEmail", response.data.user.email)
+          alert("Login successful");
+          navigate("/");
+        }
+        else {
+          console.log("login failed");
+        }
+      })
+      .catch((error) => {
+        alert(error.response.data.error);
+        setLoginCredentials(defaultCredentials)
+      })
   }
 
-  const submitLoginForm = (e) =>{
+  const submitLoginForm = (e) => {
     e.preventDefault();
     loginUser(loginCredentials);
 
   }
-  
+
+  const defaultEmail = {
+    email : "",
+  }
+  const [userEmail, setUserEmail] = useState(defaultEmail);
+  const handleEmailChange = (e) =>{
+    const name = e.target.name;
+    const value = e.target.value ;
+    setUserEmail({
+      ...userEmail, [name] : value,
+    })
+  }
+  const sendLink = (userEmail) => {
+    const forgetPassEndpt = "/api/password/forget/"
+
+    axiosInstance.post(forgetPassEndpt, userEmail)
+    .then((response)=>{
+      alert(response.data.message);
+      navigate("/login")
+      document.getElementsByClassName("closebtn")[0].click();
+    })
+    .catch((error)=>{
+      alert(error.response.data.error);
+    })
+  }
+
+  const handleForgotPassword = (e) => {
+    sendLink(userEmail)
+  }
+
+
   return (
     <div>
+
       <div className="mt-sm-5 mt-0">
         <div className="container cont text-white p-4 p-sm-4 mt-sm-0 log-style">
           <form onSubmit={submitLoginForm}>
@@ -73,14 +103,14 @@ const Login = () => {
                 placeholder="&#xF44E;  Password"
                 name="password"
                 onChange={handleChange}
-                value = {loginCredentials.password}
+                value={loginCredentials.password}
               />
             </div>
 
             <div className="input-group mb-3 d-flex justify-content-between">
               <div>
                 <small>
-                  <a href="#" className="forgot hover-link">
+                  <a href="#" className="forgot hover-link" data-bs-toggle="modal" data-bs-target="#resetPasswordModal">
                     Forgot Password?
                   </a>
                 </small>
@@ -105,6 +135,27 @@ const Login = () => {
           </form>
         </div>
       </div>
+
+      <div class="modal fade" id="resetPasswordModal" tabindex="-1" aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content bg-dark text-light">
+            <div class="modal-header">
+              <h5 class="modal-title" id="resetPasswordModalLabel">Reset Password</h5>
+              <button type="button" class="btn-close closebtn" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="emailInput" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" onChange={handleEmailChange} name = "email"/>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" onClick={handleForgotPassword}>Send Link</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 };
