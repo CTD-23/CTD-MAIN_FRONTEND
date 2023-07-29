@@ -10,7 +10,7 @@
 }
 
 .contactSection{
-    margin-top: 48%;
+    margin-top: 40%;
 }
  .card12{
     width: auto;
@@ -111,6 +111,7 @@ h5:hover{
    transform: translateY(-1px) ;
    transition: ease-out 0.3s;
    box-shadow: 0.05px  0.05px  10px #3b408f,0.05px  -0.05px  10px #3b408f,-0.05px  0.05px  10px #3b408f;
+   background-color: #0b0e1e;
 } 
 
 .reg:is(:hover){

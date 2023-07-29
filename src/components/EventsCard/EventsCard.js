@@ -46,50 +46,46 @@ const EventsCard = (props) => {
           <h5 class="card-title fs-4 text-center">{props.shortname}</h5>
           <div class="btnc">
             <button class="btn detail" data-bs-toggle="modal"
-              data-bs-target="#NTH-Modal">Info</button>
+              data-bs-target={`#${props.shortname}`}>Info</button>
             <button class="btn reg" name={props.shortname} onClick={registerEvent}>Register Here</button>
           </div>
         </div>
       </div>
+      
 
-      <div class="modal fade" id="NTH-Modal" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content text-light">
-            <div class="modal-header">
-              <h4>{props.eventName}</h4>
-              <button type="button" class="close" data-bs-dismiss="modal"
-                aria-label="Close">
-                <a class="close bg-none dark text-white" data-bs-dismiss="modal"
-                  aria-label="Close">
-                    <span aria-hidden="true" class="closebtn" >&#xF659;</span>
-                </a>
-              </button>
+      <div class="modal fade" id={`${props.shortname}`} tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content text-light">
+          <div class="modal-header">
+            <h4>{props.eventName}</h4>
+            <a class="close bg-none dark text-white" data-bs-dismiss="modal"
+            aria-label="Close"><span aria-hidden="true" class="closebtn" >&#xF659;</span></a>
+          </div>
+          <div class="modal-body min-h-20 d-flex">
+            <div class="nav flex-column justify-content-evenly nav-pills m-1"
+              id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <a class=" mbtn active" id="v-pils-home-tab" data-bs-toggle="pill"
+                href={`#v-pills-home-${props.shortname}`} role="tab" aria-controls="v-pills-home"
+                aria-selected="true">Details</a>
+              <a class=" mbtn" id="v-pills-profile-tab" data-bs-toggle="pill"
+                href={`#v-pills-profile-${props.shortname}`} role="tab"
+                aria-controls="v-pills-profile" aria-selected="false">Rules</a>
+              <a class=" mbtn" id="v-pills-messages-tab" data-bs-toggle="pill"
+                href={`#v-pills-message-${props.shortname}`} role="tab"
+                aria-controls="v-pills-messages"
+                aria-selected="false">Contact</a>
             </div>
-            <div class="modal-body min-h-20 d-flex">
-              <div class="nav flex-column justify-content-evenly nav-pills m-1"
-                id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class=" mbtn active" id="v-pils-home-tab" data-bs-toggle="pill"
-                  href="#v-pills-home-NTH" role="tab" aria-controls="v-pills-home"
-                  aria-selected="true">Details</a>
-                <a class=" mbtn" id="v-pills-profile-tab" data-bs-toggle="pill"
-                  href="#v-pills-profile-NTH" role="tab"
-                  aria-controls="v-pills-profile" aria-selected="false">Rules</a>
-                <a class=" mbtn" id="v-pills-messages-tab" data-bs-toggle="pill"
-                  href="#v-pills-messages-NTH" role="tab"
-                  aria-controls="v-pills-messages"
-                  aria-selected="false">Contact</a>
+            <div class="tab-content m-2" id="v-pills-tabContent">
+              <div class="tab-pane fade show active" id={`v-pills-home-${props.shortname}`}
+                role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <p id="dtext">{props.details}</p>
+                <p>{props.timings}</p>
               </div>
-              <div class="tab-content m-2" id="v-pills-tabContent">
-                <div class="tab-pane fade show active" id="v-pills-home-NTH"
-                  role="tabpanel" aria-labelledby="v-pills-home-tab">
-                  <p id="dtext">{props.details}</p>
-                  <p>{props.timings}</p>
-                </div>
-                <div class="tab-pane fade" id="v-pills-profile-NTH"
-                  role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                  <p id="Rules">
-                    {
+              <div class="tab-pane fade" id={`v-pills-profile-${props.shortname}`} role="tabpanel"
+                aria-labelledby="v-pills-profile-tab">
+                <p id="Rules">
+                {
                       obj.map((rule) => {
                         return <span>
                           {rule}
@@ -97,17 +93,18 @@ const EventsCard = (props) => {
                         </span>
                       })
                     }
-                  </p>
-                </div>
-                <div class="tab-pane fade" id="v-pills-messages-NTH"
-                  role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                  <p id="Save" className='contactSection'>{props.contact}</p>
-                </div>
+                </p>
+              </div>
+              <div class="tab-pane fade" id={`v-pills-message-${props.shortname}`}
+                role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                <p id="Save" className='contactSection'>{props.contact}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+
     </>
   )
 }
