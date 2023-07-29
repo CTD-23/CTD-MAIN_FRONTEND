@@ -2,7 +2,6 @@ import React from 'react'
 import "./EventsCard.css"
 import axiosInstance from '../../utils/apis'
 import { useNavigate } from 'react-router'
-
 const EventsCard = (props) => {
 
   const navigate = useNavigate();
@@ -24,25 +23,25 @@ const EventsCard = (props) => {
 
       axiosInstance.post(eventEndpoint, userEmail)
         .then((response) => {
-          if(response.data.success){
+          if (response.data.success) {
             alert(response.data.message)
           }
-          else{
+          else {
             alert("Registration Failed")
           }
         })
-        .catch((error)=>{
-          alert(error.response.data.error);
+        .catch((error) => {
+          alert(error.response.data.error)
         })
     }
-
-
   }
+
+  const obj = props.rules.split("\n");
 
   return (
     <>
       <div class="card card12 ">
-        <img class="m-auto img-fluid img-fluid12 p-2" src="https://i.postimg.cc/SKQq1t7X/datawiz.png" alt="NTH logo" />
+        <img class="m-auto img-fluid img-fluid12 p-2" src={props.imageUrl} alt="NTH logo" />
         <div class="card-body card-body12">
           <h5 class="card-title fs-4 text-center">{props.shortname}</h5>
           <div class="btnc">
@@ -58,10 +57,13 @@ const EventsCard = (props) => {
         <div class="modal-dialog" role="document">
           <div class="modal-content text-light">
             <div class="modal-header">
-              <h4>{props.name}</h4>
+              <h4>{props.eventName}</h4>
               <button type="button" class="close" data-bs-dismiss="modal"
                 aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+                <a class="close bg-none dark text-white" data-bs-dismiss="modal"
+                  aria-label="Close">
+                    <span aria-hidden="true" class="closebtn" >&#xF659;</span>
+                </a>
               </button>
             </div>
             <div class="modal-body min-h-20 d-flex">
@@ -81,17 +83,25 @@ const EventsCard = (props) => {
               <div class="tab-content m-2" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="v-pills-home-NTH"
                   role="tabpanel" aria-labelledby="v-pills-home-tab">
-                  <p id="dtext">{props.detail}</p>
-                  <h5>Timings: </h5>
-                  <p>00/00/00 00:00AM to 00/00/00 00:00 PM</p>
+                  <p id="dtext">{props.details}</p>
+                  <p>{props.timings}</p>
                 </div>
                 <div class="tab-pane fade" id="v-pills-profile-NTH"
                   role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                  <p id="Rules">{props.rules}</p>
+                  <p id="Rules">
+                    {
+                      obj.map((rule) => {
+                        return <span>
+                          {rule}
+                          <br />
+                        </span>
+                      })
+                    }
+                  </p>
                 </div>
                 <div class="tab-pane fade" id="v-pills-messages-NTH"
                   role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                  <p id="Save">{props.contacts}</p>
+                  <p id="Save" className='contactSection'>{props.contact}</p>
                 </div>
               </div>
             </div>
@@ -103,3 +113,5 @@ const EventsCard = (props) => {
 }
 
 export default EventsCard
+
+// "https://i.postimg.cc/SKQq1t7X/datawiz.png"

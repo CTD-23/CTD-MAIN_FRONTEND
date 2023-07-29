@@ -1,53 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Events.css"
 import EventsCard from '../../components/EventsCard/EventsCard'
+import axiosInstance from '../../utils/apis'
+import { events } from './EventData'
 const Events = () => {
-  const data = [
-    {
-      key:0,
-      shortname:"NCC",
-      name:"hello",
-      detail:"hello",
-      rules:"hello",
-      contacts:"hello"
-    },
-    {
-      key:1,
-      shortname:"RC",
-      name:"hello",
-      detail:"hello",
-      rules:"hello",
-      contacts:"hello"
-    },
-    {
-      key:2,
-      shortname:"Datawiz",
-      name:"hello",
-      detail:"hello",
-      rules:"hello",
-      contacts:"hello"
-    },
-  ]
+  
   return (
     <>
       <h1 class="text-light text-center h12">EVENTS</h1>
 
-
+    { (
       <div class="cardc">
         {
-          data.map((event)=>{
+          events.map((event)=>{
             return <EventsCard
+            imageUrl={event.imageUrl}
             shortname = {event.shortname}
-            name = {event.name}
-            detail = {event.detail}
+            eventName = {event.eventName}
+            details = {event.details}
+            timings = {event.timings}
             rules = {event.rules}
-            contacts = {event.contacts}
+            contact = {event.contact}
             />
           })
         }
-        
       </div>
 
+    )
+      
+
+    }
+      
     </>
   )
 }
