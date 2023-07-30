@@ -3,6 +3,10 @@
    color-scheme: dark light;
 } */
 
+.eventModal{
+    position: absolute;
+    margin-top: -15vh;
+}
 
 .close{
     text-decoration: none;

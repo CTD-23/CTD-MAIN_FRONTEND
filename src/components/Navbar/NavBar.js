@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import axiosInstance from "../../utils/apis"
-
+import DataContext from "../../contexts/DataContext";
 const NavBar = () => {
 
+  const {loginState, setLoginState} = useContext(DataContext)
   const userLogout = () => {
     const userEmail = localStorage.getItem("userEmail")
     localStorage.removeItem("isLogin");
@@ -16,6 +17,7 @@ const NavBar = () => {
     axiosInstance.get(logoutEndpoint, logoutPayload)
     .then((resposne)=>{
       console.log(resposne.data)
+      setLoginState(false)
     })
     .catch((error)=>{
       console.log(error);
@@ -24,6 +26,8 @@ const NavBar = () => {
   const handleLogout = (e) =>{
     userLogout();
   }
+
+  const hidingcss = "d-none";
   
   return (
     <>
@@ -85,7 +89,7 @@ const NavBar = () => {
                 </NavLink>
               </li>
 
-              <li class="nav-item text-light mx-2">
+              <li class={`nav-item text-light mx-2 ${loginState ? hidingcss : ""}`}>
                 <NavLink
                   to="/login"
                   className="text-decoration-none nav-link"
@@ -94,7 +98,8 @@ const NavBar = () => {
                 </NavLink>
               </li>
 
-              <li class="nav-item text-light mx-2" onClick={handleLogout}>
+              <li class={`nav-item text-light mx-2 ${!loginState ? hidingcss : ""}`}
+              onClick={handleLogout}>
                 <NavLink
                   to="/login"
                   className="text-decoration-none nav-link"

@@ -41,7 +41,10 @@
     outline-width:0;
   }
 
-  
+.resePasswordModal{
+  position: absolute;
+  margin-top: -25vh;
+}
 @media only screen and (max-width:768px){
   .cont{
     width: 320px;

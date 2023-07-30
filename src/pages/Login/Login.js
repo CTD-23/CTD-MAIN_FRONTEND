@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useCallback, useContext } from "react";
 import "./login.css";
 import axios from "axios";
 import { useState } from "react";
 import axiosInstance from "../../utils/apis";
 import { useNavigate } from "react-router";
+import DataContext from "../../contexts/DataContext";
+
 const Login = () => {
+  const{loginState, setLoginState} = useContext(DataContext);
 
   const defaultCredentials = {
     Username: "",
@@ -28,6 +31,7 @@ const Login = () => {
           localStorage.setItem("isLogin", true);
           localStorage.setItem("userEmail", response.data.user.email)
           alert("Login successful");
+          setLoginState(true);
           navigate("/");
         }
         else {
@@ -136,7 +140,7 @@ const Login = () => {
         </div>
       </div>
 
-      <div class="modal fade" id="resetPasswordModal" tabindex="-1" aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
+      <div class="modal fade resePasswordModal" id="resetPasswordModal" tabindex="-1" aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content bg-dark text-light">
             <div class="modal-header">
@@ -145,7 +149,7 @@ const Login = () => {
             </div>
             <div class="modal-body">
               <div class="mb-3">
-                <label for="emailInput" class="form-label">Email address</label>
+                <label for="emailInput " class="form-label">Email address</label>
                 <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" onChange={handleEmailChange} name = "email"/>
               </div>
             </div>

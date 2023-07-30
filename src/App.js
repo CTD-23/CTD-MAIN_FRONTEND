@@ -10,27 +10,32 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import OurTeam from "./pages/OurTeam/OurTeam";
 import ResetPassword from "./pages/Reset Password/ResetPassword";
+import DataContext from "./contexts/DataContext";
+import { useState } from "react";
 function App() {
+  const [loginState, setLoginState] = useState(false)
   return (
     <div>
-      <div>
-        <Navbar />
-      </div>
-      <div>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/aboutus" element={<AboutUs />} />
-          <Route exact path="/contactus" element={<ContactUs />} />
-          <Route exact path="/events" element={<Events />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/register" element={<Register />} />
-          <Route exact path="/ourteam" element={<OurTeam />} />
-          <Route exact path="/resetpassword/:token" element={<ResetPassword />} />
-        </Routes>
-      </div>
-      <div>
-        <Footer/>
-      </div>
+      <DataContext.Provider value={{loginState, setLoginState}}>
+        <div>
+          <Navbar />
+        </div>
+        <div>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/aboutus" element={<AboutUs />} />
+            <Route exact path="/contactus" element={<ContactUs />} />
+            <Route exact path="/events" element={<Events />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/register" element={<Register />} />
+            <Route exact path="/ourteam" element={<OurTeam />} />
+            <Route exact path="/resetpassword/:token" element={<ResetPassword />} />
+          </Routes>
+        </div>
+        <div>
+          <Footer />
+        </div>
+      </DataContext.Provider>
     </div>
   );
 }
