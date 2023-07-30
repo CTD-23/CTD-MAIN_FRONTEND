@@ -13,7 +13,7 @@ import ResetPassword from "./pages/Reset Password/ResetPassword";
 import DataContext from "./contexts/DataContext";
 import { useState } from "react";
 function App() {
-  const [loginState, setLoginState] = useState(false)
+  const [loginState, setLoginState] = useState(localStorage.getItem("isLogin"))
   return (
     <div>
       <DataContext.Provider value={{loginState, setLoginState}}>

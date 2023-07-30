@@ -33,13 +33,13 @@ const NavBar = () => {
     <>
       <nav class="navbar navbar-expand-lg navb navbar-dark text-light p-sm-1 p-2">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+          <NavLink class="navbar-brand" to="/">
             <img
               src="https://i.postimg.cc/rFvmtXSY/pisb.png"
               alt=""
               class="img-style"
             />
-          </a>
+          </NavLink>
           <button
             class="navbar-toggler"
             type="button"
