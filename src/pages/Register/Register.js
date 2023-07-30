@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "./register.css";
 import axiosInstance from "../../utils/apis"
 import { useNavigate } from "react-router";
+import { useContext } from "react";
+import DataContext from "../../contexts/DataContext";
 const Register = () => {
-
+  const { loginState, setLoginState } = useContext(DataContext);
   const defaultDetails = {
     first_name: "",
     last_name: "",
@@ -33,6 +35,7 @@ const Register = () => {
           localStorage.setItem("isLogin", true);
           localStorage.setItem("userEmail", response.data.email)
           alert("Registration successful")
+          setLoginState(true)
           navigate("/")
         }
         else {
@@ -49,7 +52,7 @@ const Register = () => {
   const submitDetails = (e) => {
     e.preventDefault();
     console.log(userDetails);
-    // registerUser(userDetails);
+    registerUser(userDetails);
   }
 
   const handleCategoryChange = (e) =>{

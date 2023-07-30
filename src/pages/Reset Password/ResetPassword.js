@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router';
 import axiosInstance from '../../utils/apis';
 import "./ResetPassword.css"
+import { useNavigate } from 'react-router-dom';
 const ResetPassword = () => {
+    const navigate = useNavigate();
     const defaultValues = {
         password: "",
         confirmPassword: "",
@@ -21,11 +23,11 @@ const ResetPassword = () => {
 
     const resetpassword = (updatedPassword) => {
 
-        const resetPassEndpoint = `/api/password/reset/${token}/`
-    
+        const resetPassEndpoint = `/api/password/reset/${token["token"]}/`
         axiosInstance.put(resetPassEndpoint, updatedPassword)
             .then((response) => {
-                console.log(response)
+                alert("Password changed successfully");
+                navigate("/login")
             })
             .catch((error) => {
                 alert(error.response.data.error)
