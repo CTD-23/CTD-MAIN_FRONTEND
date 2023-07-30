@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router';
 import axiosInstance from '../../utils/apis';
-
+import "./ResetPassword.css"
 const ResetPassword = () => {
     const defaultValues = {
         password: "",
@@ -19,54 +19,42 @@ const ResetPassword = () => {
 
     const token = useParams();
 
-    const resetpassword = (updatedPassword) =>{
+    const resetpassword = (updatedPassword) => {
 
         const resetPassEndpoint = `/api/password/reset/${token}/`
-
+    
         axiosInstance.put(resetPassEndpoint, updatedPassword)
-        .then((response)=>{
-            console.log(response)
-        })
-        .catch((error)=>{
-            console.log(error);
-        })
+            .then((response) => {
+                console.log(response)
+            })
+            .catch((error) => {
+                alert(error.response.data.error)
+                setNewPassword(defaultValues)
+            })
     }
 
-    const submitNewPassword = (e)=>{
+    const submitNewPassword = (e) => {
+        e.preventDefault();
         resetpassword(newPassword);
     }
 
 
     return (
         <>
-            <p className='text-light'>Reset Password</p>
-            <form onSubmit={submitNewPassword}>
-                <label className='text-light'>
-                    New password :
-                    <input
-                        name="password"
-                        value={defaultValues.password}
-                        onChange={handleChange}
-                    />
-                </label>
-
-                <br/>
-                <label className='text-light'>
-                    confirm password :
-                    <input
-                        name="confirmPassword"
-                        value={defaultValues.confirmPassword}
-                        onChange={handleChange}
-                    />
-                </label>
-                <br/>
-
-                <button type='submit' className='bg-light'>
-                    Change Password
-                </button>
-
-            </form>
-
+            <div class="container p-sm-5 p-3 border border-1 w-50 shadow-lg forget text-light">
+                <div class="h4 text-center mb-5">Reset Password</div>
+                <form action="" onSubmit={submitNewPassword}>
+                    <div class="my-3">
+                        <label class="form-label">New Password</label>
+                        <input type="password" class="form-control" name='password' onChange={handleChange} value={newPassword.password}/>
+                    </div>
+                    <div class="my-3">
+                        <label class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" name='confirmPassword' onChange={handleChange} value={newPassword.confirmPassword}/>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 my-3">Reset Password</button>
+                </form>
+            </div>
         </>
     )
 }
