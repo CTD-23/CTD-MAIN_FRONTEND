@@ -5,9 +5,9 @@ import { useState } from "react";
 import axiosInstance from "../../utils/apis";
 import { useNavigate } from "react-router";
 import DataContext from "../../contexts/DataContext";
-
+import { NavLink } from "react-router-dom";
 const Login = () => {
-  const{loginState, setLoginState} = useContext(DataContext);
+  const { loginState, setLoginState } = useContext(DataContext);
 
   const defaultCredentials = {
     Username: "",
@@ -51,28 +51,28 @@ const Login = () => {
   }
 
   const defaultEmail = {
-    email : "",
+    email: "",
   }
   const [userEmail, setUserEmail] = useState(defaultEmail);
-  const handleEmailChange = (e) =>{
+  const handleEmailChange = (e) => {
     const name = e.target.name;
-    const value = e.target.value ;
+    const value = e.target.value;
     setUserEmail({
-      ...userEmail, [name] : value,
+      ...userEmail, [name]: value,
     })
   }
   const sendLink = (userEmail) => {
     const forgetPassEndpt = "/api/password/forget/"
 
     axiosInstance.post(forgetPassEndpt, userEmail)
-    .then((response)=>{
-      alert(response.data.message);
-      navigate("/login")
-      document.getElementsByClassName("closebtn")[0].click();
-    })
-    .catch((error)=>{
-      alert(error.response.data.error);
-    })
+      .then((response) => {
+        alert(response.data.message);
+        navigate("/login")
+        document.getElementsByClassName("closebtn")[0].click();
+      })
+      .catch((error) => {
+        alert(error.response.data.error);
+      })
   }
 
   const handleForgotPassword = (e) => {
@@ -129,11 +129,20 @@ const Login = () => {
               </button>
             </div>
             <div className="row forgot">
-              <small>
+              <small className="d-flex">
+                <p>
                 Don't have account?{" "}
-                <a href="#" className="forgot-signup hover-link">
-                  Sign Up
-                </a>
+                </p>
+                <p>
+                <NavLink
+                  to="/register"
+                  className="text-decoration-none"
+                >
+                  <p href="#" className="forgot-signup hover-link mx-2">
+                    {" "}Sign Up
+                  </p>
+                </NavLink>
+                </p>
               </small>
             </div>
           </form>
@@ -150,7 +159,7 @@ const Login = () => {
             <div class="modal-body">
               <div class="mb-3">
                 <label for="emailInput " class="form-label">Email address</label>
-                <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" onChange={handleEmailChange} name = "email"/>
+                <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" onChange={handleEmailChange} name="email" />
               </div>
             </div>
             <div class="modal-footer">
