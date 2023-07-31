@@ -63,7 +63,7 @@ const EventsCard = (props) => {
             aria-label="Close"><span aria-hidden="true" class="closebtn" >&#xF659;</span></a>
           </div>
           <div class="modal-body min-h-20 d-flex">
-            <div class="nav flex-column justify-content-evenly nav-pills m-1"
+            <div class="eventCardNav nav flex-sm-column flex-row justify-content-evenly nav-pills m-1"
               id="v-pills-tab" role="tablist" aria-orientation="vertical">
               <a class=" mbtn active" id="v-pils-home-tab" data-bs-toggle="pill"
                 href={`#v-pills-home-${props.shortname}`} role="tab" aria-controls="v-pills-home"
