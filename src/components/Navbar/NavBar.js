@@ -52,8 +52,10 @@ const NavBar = () => {
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
+            
             <ul class="navbar-nav ms-auto">
               <li class="nav-item text-light mx-2">
+                
                 <NavLink
                   to="/"
                   className="text-decoration-none nav-link"

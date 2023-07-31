@@ -57,13 +57,13 @@ const EventsCard = (props) => {
       aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content text-light">
-          <div class="modal-header">
+          <div class="modal-header mb-0">
             <h4>{props.eventName}</h4>
             <a class="close bg-none dark text-white" data-bs-dismiss="modal"
             aria-label="Close"><span aria-hidden="true" class="closebtn" >&#xF659;</span></a>
           </div>
-          <div class="modal-body min-h-20 d-flex">
-            <div class="eventCardNav nav flex-sm-column flex-row justify-content-evenly nav-pills m-1"
+          <div class="modal-body  d-flex">
+            <div class="eventCardNav nav flex-sm-column flex-row justify-content-evenly nav-pills m-0"
               id="v-pills-tab" role="tablist" aria-orientation="vertical">
               <a class=" mbtn active" id="v-pils-home-tab" data-bs-toggle="pill"
                 href={`#v-pills-home-${props.shortname}`} role="tab" aria-controls="v-pills-home"
@@ -76,11 +76,12 @@ const EventsCard = (props) => {
                 aria-controls="v-pills-messages"
                 aria-selected="false">Contact</a>
             </div>
-            <div class="tab-content m-2" id="v-pills-tabContent">
+            <div class="tab-content m-0" id="v-pills-tabContent">
               <div class="tab-pane fade show active" id={`v-pills-home-${props.shortname}`}
                 role="tabpanel" aria-labelledby="v-pills-home-tab">
                 <p id="dtext">{props.details}</p>
-                <p>{props.timings}</p>
+                <span>Timing : </span>
+                <p className='timing'>{props.timings}</p>
               </div>
               <div class="tab-pane fade" id={`v-pills-profile-${props.shortname}`} role="tabpanel"
                 aria-labelledby="v-pills-profile-tab">
@@ -104,6 +105,8 @@ const EventsCard = (props) => {
         </div>
       </div>
     </div>
+    
+
 
     </>
   )

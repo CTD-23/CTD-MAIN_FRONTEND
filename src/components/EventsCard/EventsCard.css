@@ -1,11 +1,27 @@
 
 .eventModal{
     position: absolute;
+    margin-top: -10vh;
 }
+
+.detail:focus {
+    outline: none; /* Remove focus outline */
+    box-shadow: none; /* Remove box-shadow on focus */
+  }
+
+  .reg:focus {
+    outline: none; /* Remove focus outline */
+    box-shadow: none; /* Remove box-shadow on focus */
+  }
+
 
 .close{
     text-decoration: none;
     cursor: pointer;
+}
+
+.timing{
+    text-align:start;
 }
 
 .contactSection{
@@ -18,17 +34,18 @@
    min-height: 15rem;
    height: 350px;
    background-color: rgba(255,255,255,0.01);
-   color: #fffff0;
+   color: #0d6efd;
    backdrop-filter: blur(5px);
    border: 3px solid rgba(255,255,255, 0.1);
+   /* border:3px solid #212451;; */
    margin: 20px;
    overflow: hidden;
 }
 .img-fluid12 {
     background-color: transparent;
     color: #fffff0;
-    min-height: 150px;
-    min-width: 150px;
+    min-height: 160px;
+    min-width: 160px;
     transition-duration: 0.5s;
 }
 
@@ -61,21 +78,24 @@
 }
 
  .detail:hover{
+    color: white !important;
+    scale: 1.1;
     background-color: #0b0e1e !important;
-   scale: 1.1;
    border: 2px solid #131530;
-   transform: translateY(-1px) ;
+   transform: translateY(-0.3px) ;
    transition: ease-out 0.3s;
-   box-shadow: 0.05px  0.05px  10px #3b408f,0.05px  -0.05px  10px #3b408f,-0.05px  0.05px  10px #3b408f;
+   box-shadow: 0.05px  0.05px  7px #3b408f,0.05px  -0.05px  7px #3b408f,-0.05px  0.05px  7px #3b408f;
    
 } 
 
 .reg:is(:hover){
+    color: white !important;
+    background-color: #0b0e1e !important;
     scale: 1.1;
    border: 2px solid #131530;
-   transform: translateY(-1px) ;
+   transform: translateY(-0.3px) ;
    transition: ease-out 0.3s;
-   box-shadow: 0.05px  0.05px  10px #3b408f,0.05px  -0.05px  10px #3b408f,-0.05px  0.05px  10px #3b408f;
+   box-shadow: 0.05px  0.05px  7px #3b408f,0.05px  -0.05px  7px #3b408f,-0.05px  0.05px  7px #3b408f;
  }
 
 .modal-dialog{
@@ -163,7 +183,10 @@
     }
     .mbtn{
         padding: 5px 7px;
-        margin: 14px auto;
+       margin-top: 0px;
+       margin-bottom: 15px;
+       margin-left: 5px;
+       margin-right: 4px;
         color: #0d6efd;
         border: solid white;
         border-width: 0px 0px 0px 0;
@@ -177,5 +200,15 @@
         color: #0d6efd;
         transition: border-width ease-in-out 0.1s;
      }
+
+     .eventModal{
+        position: absolute;
+        margin-top: 2vh;
+    }
+
+    .contactSection{
+        margin-top: 0%;
+        text-align: start;
+    }
  }
 
