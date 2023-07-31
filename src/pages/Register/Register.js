@@ -71,11 +71,11 @@ const Register = () => {
           <form onSubmit={submitDetails}>
             <div className="title mb-sm-2 mb-3 text-center">
               <h1>Sign up &#xF4DD;</h1>
-              <small className="d-none d-sm-block">
+              <small className="d-none">
                 Will be delightful to have you on board.
               </small>
             </div>
-            <div className="input-group mb-3">
+            <div className="input-group mb-2">
               <input
                 type="text"
                 className="form-control form-control-lg fs-6 input-style"
@@ -85,7 +85,7 @@ const Register = () => {
                 onChange={handleChange}
               />
             </div>
-            <div className="input-group mb-3">
+            <div className="input-group mb-2">
               <input
                 type="text"
                 className="form-control form-control-lg fs-6 input-style"
@@ -96,7 +96,7 @@ const Register = () => {
               />
             </div>
 
-            <div className="input-group mb-3">
+            <div className="input-group mb-2">
               <input
                 type="text"
                 className="form-control form-control-lg fs-6 input-style"
@@ -107,7 +107,7 @@ const Register = () => {
               />
             </div>
 
-            <div className="input-group mb-3">
+            <div className="input-group mb-2">
               <input
                 type="email"
                 className="form-control form-control-lg fs-6 input-style"
@@ -118,7 +118,7 @@ const Register = () => {
               />
             </div>
 
-            <div className="input-group mb-3">
+            <div className="input-group mb-2">
               <input
                 type="text"
                 className="form-control form-control-lg fs-6 input-style"
@@ -129,7 +129,7 @@ const Register = () => {
               />
             </div>
 
-            <div className="input-group mb-3">
+            <div className="input-group mb-2">
               <input
                 type="password"
                 className="form-control form-control-lg fs-6 input-style"
@@ -140,23 +140,24 @@ const Register = () => {
                 checked
               />
             </div>
-            <div className="d-flex"> 
+
+            {/* <div className="form-check"> 
               <label>Category : </label>
               <div class="form-check mx-5 ms-5">
-                <input class="form-check-input" type="radio" id="flexRadioDefault1" name="isJunior" onClick={handleChange} value={"true"}/>
+                <input class="form-check-input" type="radio" id="flexRadioDefault1" name="isJunior" onClick={handleChange}/>
                 <label class="form-check-label" for="flexRadioDefault1">
                   Junior
                 </label>
               </div>
 
-              <div class="form-check flex">
-                <input class="form-check-input" type="radio" name="isJunior" id="flexRadioDefault2"  onClick={handleChange} value={"false"}/>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="isJunior" id="flexRadioDefault2"  onClick={handleChange}/>
                 <label class="form-check-label" for="flexRadioDefault2">
                   Senior
                 </label>
               </div>
 
-            </div>
+            </div> */}
 
 
             <div className="input-group mb-2">
@@ -170,7 +171,16 @@ const Register = () => {
                 <a href="#" className="forgot-signup hover-link">
                   Log in
                 </a>
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="isJunior" id="flexRadioDefault2"  onClick={handleChange}/>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Senior
+                </label>
+                </div>
+                
+              
               </small>
+              
             </div>
           </form>
         </div>

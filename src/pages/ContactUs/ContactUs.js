@@ -7,7 +7,7 @@ const ContactUs = () => {
 
   return (
     <div>
-      <div class="heading text-center">
+      <div class="heading text-center mt-sm-4 mt-4">
         <h1>Get In Touch With Us</h1>
       </div>
       <div class="container-fluid containercard">

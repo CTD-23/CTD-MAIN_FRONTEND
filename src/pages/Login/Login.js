@@ -84,7 +84,7 @@ const Login = () => {
     <div>
 
       <div className="mt-sm-5 mt-0">
-        <div className="container cont text-white p-4 p-sm-4 mt-sm-0 log-style">
+        <div className="container cont text-white p-4 p-sm-3 mt-sm-0 log-style">
           <form onSubmit={submitLoginForm}>
             <div className="title mb-4 text-center">
               <h1>Sign in</h1>
