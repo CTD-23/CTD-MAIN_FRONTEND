@@ -122,7 +122,7 @@ const Login = () => {
             </div>
             <div className="input-group mb-4">
               <button
-                className="btn btn-lg w-100 fs-6"
+                className="btn btn-lg btn1 w-100 fs-6"
                 type="submit"
               >
                 Login

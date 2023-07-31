@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./register.css";
-import axiosInstance from "../../utils/apis"
+import axiosInstance from "../../utils/apis";
 import { useNavigate } from "react-router";
 import { useContext } from "react";
 import DataContext from "../../contexts/DataContext";
 const Register = () => {
   const { loginState, setLoginState } = useContext(DataContext);
+  // const [isJunior,setIsJunior] = useState(false);
   const defaultDetails = {
     first_name: "",
     last_name: "",
@@ -13,60 +14,85 @@ const Register = () => {
     email: "",
     reg_id: "",
     password: "",
-    isJunior: "true",
-  }
+    isJunior: false,
+  };
+
+ 
 
   const [userDetails, setUserDetails] = useState(defaultDetails);
 
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
+    const checked = e.target.checked;
 
     setUserDetails({ ...userDetails, [name]: value });
-  }
+
+    if(name==='isJunior'){
+      setUserDetails({ ...userDetails, [name]: checked });
+    }
+    // e.tagrget==='isJunior'?
+  // if(e.target.type=='checkbox') {
+
+  //     setUserDetails({ ...userDetails, [name]: checked });
+
+  // }
+  // else{
+  //     setUserDetails({ ...userDetails, [name]: value });
+  // }
+  
+  // if('value' in e.target) {
+      // this.setState({ [event.target.name]: event.target.value});
+     
+  // }
+
+    // e.target.checked?setIsJunior(true):setIsJunior(false);
+
+    // console.log(e.target.checked);
+
+  };
 
   const navigate = useNavigate();
 
   const registerUser = (details) => {
     const registerEndpoint = "/api/register";
-    axiosInstance.post(registerEndpoint, details)
+    axiosInstance
+      .post(registerEndpoint, details)
       .then((response) => {
         if (response.data.success) {
           localStorage.setItem("isLogin", true);
-          localStorage.setItem("userEmail", response.data.email)
-          alert("Registration successful")
-          setLoginState(true)
-          navigate("/")
-        }
-        else {
-          alert("Registration failed")
+          localStorage.setItem("userEmail", response.data.email);
+          alert("Registration successful");
+          setLoginState(true);
+          navigate("/");
+        } else {
+          alert("Registration failed");
           setUserDetails(defaultDetails);
         }
       })
       .catch((error) => {
         console.log(error);
-      })
-
-  }
+      });
+  };
 
   const submitDetails = (e) => {
     e.preventDefault();
     console.log(userDetails);
     registerUser(userDetails);
-  }
+  };
 
-  const handleCategoryChange = (e) =>{
-    if(e.target.name == "junior"){
-      setUserDetails({...userDetails, ["isJunior"]:true});
-    }
-    else{
-      setUserDetails({...userDetails, ["isJunior"] : false})
-    }
-  }
+  // const handleCategoryChange = (e) =>{
+  //   if(e.target.name == "junior"){
+  //     setUserDetails({...userDetails, ["isJunior"]:true});
+  //   }
+  //   else{
+  //     setUserDetails({...userDetails, ["isJunior"] : false})
+  //   }
+  // }
 
   return (
     <div>
-      <div className="mt-sm-2 mt-0 p-sm-0 p-sm-1 mb-5" >
+      <div className="mt-sm-2 mt-0 p-sm-0 p-sm-1 mb-5">
         <div className="container cont text-white p-4 p-sm-3 mt-sm-0 log-style">
           <form onSubmit={submitDetails}>
             <div className="title mb-sm-2 mb-3 text-center">
@@ -159,9 +185,23 @@ const Register = () => {
 
             </div> */}
 
-
             <div className="input-group mb-2">
-              <button className="btn btn-lg w-100 fs-6">
+            <small>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="isJunior"
+                    value=""
+                    id="flexCheckDefault"
+                    onClick={handleChange}
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Junior
+                  </label>
+                </div>
+              </small>
+              <button className="btn btn-lg w-100 rounded-2 fs-6 btn1 text-light">
                 Register &#xF4DD;
               </button>
             </div>
@@ -171,16 +211,7 @@ const Register = () => {
                 <a href="#" className="forgot-signup hover-link">
                   Log in
                 </a>
-                <div class="form-check">
-                <input class="form-check-input" type="radio" name="isJunior" id="flexRadioDefault2"  onClick={handleChange}/>
-                <label class="form-check-label" for="flexRadioDefault2">
-                  Senior
-                </label>
-                </div>
-                
-              
               </small>
-              
             </div>
           </form>
         </div>
