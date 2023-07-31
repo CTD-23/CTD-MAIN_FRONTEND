@@ -1,17 +1,17 @@
 export const events=[
-    {
-        eventName:`Network Treasure Hunt`,
-        shortname : `NTH`,
-        imageUrl:`https://i.postimg.cc/SKQq1t7X/datawiz.png`,
-        details:`Bored with the same regular class? Want to deep dive 
-        into the world of ciphers and puzzles? NTH got you covered!
-        Network Treasure Hunt is an online version of a treasure hunt
-        but with more adventure and riddles! Put on your thinking hats and join us 
-        in the event where LOGIC is all you can think of.` ,
-        timings : `Timings:11/11/22 9 PM to 12/11/22 8:59 PM`,
-        rules:`1: All the puzzles will be displayed on nth.credenz.in \n 2: Each puzzle leads to a unique keyword. This keyword will take you to the next question. \n 3: The Contest will show a real-time leaderboard for all players.\n 4: After the contest is concluded, the first person on the leaderboard will be declared as the winner. \n 5: It is a solo contest, hence any activity with teaming up is strictly restricted.`,
-        contact:`Shreya Bansod : +91 9876543210`
-    },
+    // {
+    //     eventName:`Network Treasure Hunt`,
+    //     shortname : `NTH`,
+    //     imageUrl:`https://i.postimg.cc/SKQq1t7X/datawiz.png`,
+    //     details:`Bored with the same regular class? Want to deep dive 
+    //     into the world of ciphers and puzzles? NTH got you covered!
+    //     Network Treasure Hunt is an online version of a treasure hunt
+    //     but with more adventure and riddles! Put on your thinking hats and join us 
+    //     in the event where LOGIC is all you can think of.` ,
+    //     timings : `Timings:11/11/22 9 PM to 12/11/22 8:59 PM`,
+    //     rules:`1: All the puzzles will be displayed on nth.credenz.in \n 2: Each puzzle leads to a unique keyword. This keyword will take you to the next question. \n 3: The Contest will show a real-time leaderboard for all players.\n 4: After the contest is concluded, the first person on the leaderboard will be declared as the winner. \n 5: It is a solo contest, hence any activity with teaming up is strictly restricted.`,
+    //     contact:`Shreya Bansod : +91 9876543210`
+    // },
     
     {
         eventName:`National Computing Contest`,
