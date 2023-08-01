@@ -162,7 +162,7 @@ const Login = () => {
             <div class="modal-body">
               <div class="">
                 <label for="emailInput " class="form-label">Email address</label>
-                <input type="email" class="form-control" id="emailInput" placeholder="" onChange={handleEmailChange} name="email" />
+                <input type="email" class="form-control input-style" id="emailInput" placeholder="" onChange={handleEmailChange} name="email" />
               </div>
             </div>
             <div class="modal-footer">
