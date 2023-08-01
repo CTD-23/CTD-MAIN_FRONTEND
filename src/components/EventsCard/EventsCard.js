@@ -45,14 +45,14 @@ const EventsCard = (props) => {
 
       <div class="modal fade eventModal" id={`${props.shortname}`} tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content text-light">
-            <div class="modal-header mb-0">
+        <div class="modal-dialog modal-dialog1" role="document">
+          <div class="modal-content modal-content1 text-light">
+            <div class="modal-header modal-header1 mb-0">
               <h4 className='ms-0'>{props.eventName}</h4>
               <a class="close bg-none dark text-white" data-bs-dismiss="modal"
                 aria-label="Close"><span aria-hidden="true" class="closebtn" >&#xF659;</span></a>
             </div>
-            <div class="modal-body  d-flex">
+            <div class="modal-body modal-body1  d-flex">
               <div class="eventCardNav nav flex-sm-column flex-row justify-content-between nav-pills m-0"
                 id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <a class=" mbtn active" id="v-pils-home-tab" data-bs-toggle="pill"
