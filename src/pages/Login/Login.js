@@ -128,7 +128,7 @@ const Login = () => {
                 Login
               </button>
             </div>
-            <div className="row forgot">
+            <div className="row forgot mt-0">
               <small className="d-flex">
                 <span>
                 Don't have account?{" "}
@@ -138,9 +138,9 @@ const Login = () => {
                   to="/register"
                   className="text-decoration-none"
                 >
-                  <p href="#" className="forgot-signup hover-link mx-2">
+                  <span href="#" className="forgot-signup hover-link mx-2">
                     {" "}Sign Up
-                  </p>
+                  </span>
                 </NavLink>
                 </span>
               </small>
