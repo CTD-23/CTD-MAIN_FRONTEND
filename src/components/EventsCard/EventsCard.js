@@ -8,39 +8,41 @@ const EventsCard = (props) => {
 
   const registerEvent = (e) => {
 
-    if (!localStorage.getItem("isLogin") || !localStorage.getItem("userEmail")) {
-      alert("Please login to continue")
-      navigate("/login")
-    }
-    else {
-      const eventName = e.target.name;
-      const email = localStorage.getItem("userEmail")
-      const userEmail = {
-        "email1": email,
-      }
 
-      const eventEndpoint = `api/register/indi/${eventName}/`
-
-      axiosInstance.post(eventEndpoint, userEmail)
-        .then((response) => {
-          if (response.data.success) {
-            alert(response.data.message)
-          }
-          else {
-            alert("Registration Failed")
-          }
-        })
-        .catch((error) => {
-          alert(error.response.data.error)
-        })
+    const eventName = e.target.name;
+    const email = localStorage.getItem("userEmail")
+    const userEmail = {
+      "email1": email,
     }
+
+    const eventEndpoint = `api/register/indi/${eventName}/`
+
+    axiosInstance.post(eventEndpoint, userEmail)
+      .then((response) => {
+        if (response.data.success) {
+          alert(response.data.message)
+        }
+        else {
+          alert("Registration Failed")
+        }
+      })
+      .catch((error) => {
+        alert(error.response.data.error)
+        if (error.response.status === 401) {
+          navigate("/login")
+        }
+        else if (error.response.status === 500) {
+          navigate("/events")
+        }
+      })
+
   }
 
   const obj = props.rules.split("\n");
 
   return (
     <>
-      
+
 
 
       <div class="modal fade eventModal" id={`${props.shortname}`} tabindex="-1" role="dialog"

@@ -6,6 +6,7 @@ import axiosInstance from "../../utils/apis";
 import { useNavigate } from "react-router";
 import DataContext from "../../contexts/DataContext";
 import { NavLink } from "react-router-dom";
+import {toast} from 'react-toastify';
 const Login = () => {
   const { loginState, setLoginState } = useContext(DataContext);
 
@@ -24,24 +25,32 @@ const Login = () => {
 
   const navigate = useNavigate();
   const loginUser = (loginPayload) => {
+    const id = toast.loading("Please wait...");
     const loginEndpoint = "/api/login";
+
+    setTimeout(() => {
+
+    
     axiosInstance.post(loginEndpoint, loginPayload)
       .then((response) => {
         if (response.data.success) {
           localStorage.setItem("isLogin", true);
           localStorage.setItem("userEmail", response.data.user.email)
-          alert("Login successful");
           setLoginState(true);
           navigate("/");
+          toast.update(id, { render: "Logged in successfully !", type: "success", isLoading: false, autoClose:3000 })
         }
         else {
           console.log("login failed");
         }
       })
       .catch((error) => {
-        alert(error.response.data.error);
+        toast.update(id, { render: error.response.data.error, type: "error", isLoading: false, autoClose:3000 })
         setLoginCredentials(defaultCredentials)
       })
+
+    }, 1000)
+
   }
 
   const submitLoginForm = (e) => {
@@ -78,7 +87,6 @@ const Login = () => {
   const handleForgotPassword = (e) => {
     sendLink(userEmail)
   }
-
 
   return (
     <div>

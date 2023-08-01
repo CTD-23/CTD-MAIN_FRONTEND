@@ -4,6 +4,7 @@ import axiosInstance from "../../utils/apis";
 import { useNavigate } from "react-router";
 import { useContext } from "react";
 import DataContext from "../../contexts/DataContext";
+import {toast} from 'react-toastify';
 import { NavLink } from "react-router-dom";
 const Register = () => {
   const { loginState, setLoginState } = useContext(DataContext);
@@ -57,13 +58,16 @@ const Register = () => {
 
   const registerUser = (details) => {
     const registerEndpoint = "/api/register";
+    const id = toast.loading("Please wait...");
+    setTimeout(() => {
+
     axiosInstance
       .post(registerEndpoint, details)
       .then((response) => {
         if (response.data.success) {
           localStorage.setItem("isLogin", true);
           localStorage.setItem("userEmail", response.data.email);
-          alert("Registration successful");
+          toast.update(id, { render: "Registered  successfully !", type: "success", isLoading: false, autoClose:3000 })
           setLoginState(true);
           navigate("/");
         } else {
@@ -72,8 +76,9 @@ const Register = () => {
         }
       })
       .catch((error) => {
-        console.log(error);
+        toast.update(id, { render: error.response.data.error, type: "error", isLoading: false, autoClose:3000 })
       });
+    }, 1000)
   };
 
   const submitDetails = (e) => {

@@ -31,7 +31,7 @@ const NavBar = () => {
   
   return (
     <>
-      <nav class="navbar navbar-expand-lg navb navbar-dark text-light p-sm-1 p-2">
+      <nav class="navbar navbar-expand-lg navb navbar-dark text-light p-sm-2 p-2">
         <div class="container-fluid">
           <NavLink class="navbar-brand" to="/">
             <img

@@ -11,6 +11,8 @@ import Register from "./pages/Register/Register";
 import OurTeam from "./pages/OurTeam/OurTeam";
 import ResetPassword from "./pages/Reset Password/ResetPassword";
 import DataContext from "./contexts/DataContext";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
 function App() {
   const [loginState, setLoginState] = useState(localStorage.getItem("isLogin"))
@@ -20,6 +22,9 @@ function App() {
         <div>
           <Navbar />
         </div>
+
+        <ToastContainer theme="dark" className="mt-5"/>
+        
         <div>
           <Routes>
             <Route exact path="/" element={<Home />} />
