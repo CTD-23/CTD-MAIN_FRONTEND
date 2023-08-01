@@ -21,7 +21,7 @@ const AboutUs = () => {
           </div>
       </div>
 
-      <div class="container text-center mt-lg-5 p-5 mt-sm-0 text-white">
+      <div class="container text-center mt-lg-5 p-4 mt-sm-0 text-white">
 
         <h1 class="mb-sm-3 mb-lg-5">ABOUT US</h1>
 
