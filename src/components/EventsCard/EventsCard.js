@@ -10,7 +10,7 @@ const EventsCard = (props) => {
 
     if (!localStorage.getItem("isLogin") || !localStorage.getItem("userEmail")) {
       alert("Please login to continue")
-      navigate("/")
+      navigate("/login")
     }
     else {
       const eventName = e.target.name;

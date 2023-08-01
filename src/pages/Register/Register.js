@@ -15,7 +15,7 @@ const Register = () => {
     email: "",
     reg_id: "",
     password: "",
-    isJunior: false,
+    isJunior: "false",
   };
 
 
@@ -193,7 +193,7 @@ const Register = () => {
                     class="form-check-input"
                     type="checkbox"
                     name="isJunior"
-                    value=""
+                    value="false"
                     id="flexCheckDefault"
                     onClick={handleChange}
                   />
