@@ -94,9 +94,9 @@ const Register = () => {
   return (
     <div>
       <div className="mt-sm-2 mt-0 p-sm-0 p-sm-1 mb-5">
-        <div className="container cont text-white p-4 p-sm-3 mt-sm-0 log-style">
+        <div className="container cont12 text-white p-3 p-sm-3 px-sm-4 mt-sm-0 log-style">
           <form onSubmit={submitDetails}>
-            <div className="title mb-sm-2 mb-3 text-center">
+            <div className="title mb-sm-3 mb-3 text-center">
               <h1>Sign up &#xF4DD;</h1>
               <small className="d-none">
                 Will be delightful to have you on board.
@@ -105,7 +105,7 @@ const Register = () => {
             <div className="input-group mb-2">
               <input
                 type="text"
-                className="form-control form-control-lg fs-6 input-style"
+                className="form-control form-control-lg fs-6 input-style-register"
                 placeholder="&#xF4C8;  First Name"
                 name="first_name"
                 value={userDetails.first_name}
@@ -115,7 +115,7 @@ const Register = () => {
             <div className="input-group mb-2">
               <input
                 type="text"
-                className="form-control form-control-lg fs-6 input-style"
+                className="form-control form-control-lg fs-6 input-style-register"
                 placeholder="&#xF4C8;  Last Name"
                 name="last_name"
                 value={userDetails.last_name}
@@ -126,7 +126,7 @@ const Register = () => {
             <div className="input-group mb-2">
               <input
                 type="text"
-                className="form-control form-control-lg fs-6 input-style"
+                className="form-control form-control-lg fs-6 input-style-register"
                 placeholder="&#xF4DA;  Username"
                 name="Username"
                 value={userDetails.Username}
@@ -137,7 +137,7 @@ const Register = () => {
             <div className="input-group mb-2">
               <input
                 type="email"
-                className="form-control form-control-lg fs-6 input-style"
+                className="form-control form-control-lg fs-6 input-style-register"
                 placeholder="&#xF32C;  Email address"
                 name="email"
                 value={userDetails.email}
@@ -148,7 +148,7 @@ const Register = () => {
             <div className="input-group mb-2">
               <input
                 type="text"
-                className="form-control form-control-lg fs-6 input-style"
+                className="form-control form-control-lg fs-6 input-style-register"
                 placeholder="&#xF4CF;  Reg. Id"
                 name="reg_id"
                 value={userDetails.reg_id}
@@ -159,7 +159,7 @@ const Register = () => {
             <div className="input-group mb-2">
               <input
                 type="password"
-                className="form-control form-control-lg fs-6 input-style"
+                className="form-control form-control-lg fs-6 input-style-register"
                 placeholder="&#xF44E;  Password"
                 name="password"
                 value={userDetails.password}
@@ -202,25 +202,25 @@ const Register = () => {
                   </label>
                 </div>
               </small>
-              <button className="btn btn-lg w-100 rounded-2 fs-6 btn1 text-light">
+              <button className="btn btn-lg w-100 rounded-2 fs-6 btn12 text-light">
                 Register &#xF4DD;
               </button>
             </div>
             <div className="row forgot">
               <small className="d-flex">
-                <p>
+                <span>
                 Already a user?{" "}
-                </p>
-                <p>
+                </span>
+                <span>
                 <NavLink
                   to="/login"
                   className="text-decoration-none"
                 >
-                  <p href="#" className="forgot-signup hover-link mx-2">
+                  <span href="#" className="forgot-signup hover-link mx-2">
                     {" "}Sign In
-                  </p>
+                  </span>
                 </NavLink>
-                </p>
+                </span>
               </small>
             </div>
           </form>
