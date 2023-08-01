@@ -4,6 +4,7 @@ import axiosInstance from "../../utils/apis";
 import { useNavigate } from "react-router";
 import { useContext } from "react";
 import DataContext from "../../contexts/DataContext";
+import { NavLink } from "react-router-dom";
 const Register = () => {
   const { loginState, setLoginState } = useContext(DataContext);
   // const [isJunior,setIsJunior] = useState(false);
@@ -17,7 +18,7 @@ const Register = () => {
     isJunior: false,
   };
 
- 
+
 
   const [userDetails, setUserDetails] = useState(defaultDetails);
 
@@ -28,23 +29,23 @@ const Register = () => {
 
     setUserDetails({ ...userDetails, [name]: value });
 
-    if(name==='isJunior'){
+    if (name === 'isJunior') {
       setUserDetails({ ...userDetails, [name]: checked });
     }
     // e.tagrget==='isJunior'?
-  // if(e.target.type=='checkbox') {
+    // if(e.target.type=='checkbox') {
 
-  //     setUserDetails({ ...userDetails, [name]: checked });
+    //     setUserDetails({ ...userDetails, [name]: checked });
 
-  // }
-  // else{
-  //     setUserDetails({ ...userDetails, [name]: value });
-  // }
-  
-  // if('value' in e.target) {
-      // this.setState({ [event.target.name]: event.target.value});
-     
-  // }
+    // }
+    // else{
+    //     setUserDetails({ ...userDetails, [name]: value });
+    // }
+
+    // if('value' in e.target) {
+    // this.setState({ [event.target.name]: event.target.value});
+
+    // }
 
     // e.target.checked?setIsJunior(true):setIsJunior(false);
 
@@ -186,7 +187,7 @@ const Register = () => {
             </div> */}
 
             <div className="input-group mb-2">
-            <small>
+              <small>
                 <div class="form-check">
                   <input
                     class="form-check-input"
@@ -206,11 +207,20 @@ const Register = () => {
               </button>
             </div>
             <div className="row forgot">
-              <small>
+              <small className="d-flex">
+                <p>
                 Already a user?{" "}
-                <a href="#" className="forgot-signup hover-link">
-                  Log in
-                </a>
+                </p>
+                <p>
+                <NavLink
+                  to="/login"
+                  className="text-decoration-none"
+                >
+                  <p href="#" className="forgot-signup hover-link mx-2">
+                    {" "}Sign In
+                  </p>
+                </NavLink>
+                </p>
               </small>
             </div>
           </form>

@@ -1,6 +1,6 @@
 .cont{
     width: 530px;
-    margin-top: 40%;
+    margin-top: 60%;
   }
 
 .btn1{
@@ -40,7 +40,6 @@
     background:rgba(255,255,255,0.1);
     border-color:rgba(255,255,255,0.1);
     color:white;
-    /* outline-width:0; */
     outline: none;
   }
 
