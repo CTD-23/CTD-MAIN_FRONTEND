@@ -131,35 +131,38 @@ const Login = () => {
             <div className="row forgot mt-0">
               <small className="d-flex">
                 <span>
-                Don't have account?{" "}
+                  Don't have account?{" "}
                 </span>
                 <span>
-                <NavLink
-                  to="/register"
-                  className="text-decoration-none"
-                >
-                  <span href="#" className="forgot-signup hover-link mx-2">
-                    {" "}Sign Up
-                  </span>
-                </NavLink>
+                  <NavLink
+                    to="/register"
+                    className="text-decoration-none"
+                  >
+                    <span href="#" className="forgot-signup hover-link mx-2">
+                      {" "}Sign Up
+                    </span>
+                  </NavLink>
                 </span>
               </small>
             </div>
-          </form>
-        </div>
-      </div>
 
-      <div class="modal fade resetPasswordModal" id="resetPasswordModal" tabindex="-1" aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
+
+          </form>
+
+        </div>
+        <div className="container p-3">
+        <div class="modal fade resetPasswordModal" id="resetPasswordModal" tabindex="-1" aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content bg-dark text-light">
             <div class="modal-header">
               <h5 class="modal-title" id="resetPasswordModalLabel">Reset Password</h5>
-              <button type="button" class="btn-close closebtn" data-bs-dismiss="modal" aria-label="Close"></button>
+              <a class="close bg-none dark text-white" data-bs-dismiss="modal"
+                aria-label="Close"><span aria-hidden="true" class="closebtn" >&#xF659;</span></a>
             </div>
             <div class="modal-body">
               <div class="">
                 <label for="emailInput " class="form-label">Email address</label>
-                <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" onChange={handleEmailChange} name="email" />
+                <input type="email" class="form-control" id="emailInput" placeholder="" onChange={handleEmailChange} name="email" />
               </div>
             </div>
             <div class="modal-footer">
@@ -167,7 +170,12 @@ const Login = () => {
             </div>
           </div>
         </div>
+        </div>
       </div>
+
+
+      </div>
+
 
     </div>
   );

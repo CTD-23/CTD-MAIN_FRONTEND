@@ -106,7 +106,7 @@
     background-color: #0e121b;
     backdrop-filter: blur(10px);
     padding: 0;
-    text-wrap: balance;
+    /* text-wrap: balance; */
     border: 2px solid rgba(255,255,255, 0.1);
  }
  .modal-dialog1{
