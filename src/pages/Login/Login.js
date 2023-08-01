@@ -84,7 +84,7 @@ const Login = () => {
     <div>
 
       <div className="mt-sm-5 mt-0">
-        <div className="container cont text-white p-4 p-sm-3 mt-sm-0 log-style">
+        <div className="container cont text-white p-4 p-sm-3 log-style">
           <form onSubmit={submitLoginForm}>
             <div className="title mb-4 text-center">
               <h1>Sign in</h1>
@@ -130,10 +130,10 @@ const Login = () => {
             </div>
             <div className="row forgot">
               <small className="d-flex">
-                <p>
+                <span>
                 Don't have account?{" "}
-                </p>
-                <p>
+                </span>
+                <span>
                 <NavLink
                   to="/register"
                   className="text-decoration-none"
@@ -142,7 +142,7 @@ const Login = () => {
                     {" "}Sign Up
                   </p>
                 </NavLink>
-                </p>
+                </span>
               </small>
             </div>
           </form>
