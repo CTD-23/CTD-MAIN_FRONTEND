@@ -3,6 +3,8 @@ import { useParams } from 'react-router';
 import axiosInstance from '../../utils/apis';
 import "./ResetPassword.css"
 import { useNavigate } from 'react-router-dom';
+import {toast} from 'react-toastify';
+
 const ResetPassword = () => {
     const navigate = useNavigate();
     const defaultValues = {
@@ -22,17 +24,22 @@ const ResetPassword = () => {
     const token = useParams();
 
     const resetpassword = (updatedPassword) => {
-
+        const id = toast.loading("Please wait...");
         const resetPassEndpoint = `/api/password/reset/${token["token"]}/`
-        axiosInstance.put(resetPassEndpoint, updatedPassword)
+        setTimeout(()=>{
+            axiosInstance.put(resetPassEndpoint, updatedPassword)
             .then((response) => {
-                alert("Password changed successfully");
+                // alert("Password changed successfully");
+                toast.update(id, { render: response.data.message, type: "success", isLoading: false, autoClose:3000 })
                 navigate("/login")
             })
             .catch((error) => {
-                alert(error.response.data.error)
+                // alert(error.response.data.error)
+                toast.update(id, { render: error.response.data.error, type: "error", isLoading: false, autoClose:3000 })
                 setNewPassword(defaultValues)
             })
+        },1000)
+        
     }
 
     const submitNewPassword = (e) => {

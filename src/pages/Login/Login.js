@@ -1,4 +1,4 @@
-import React, { useCallback, useContext } from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import "./login.css";
 import axios from "axios";
 import { useState } from "react";
@@ -7,6 +7,7 @@ import { useNavigate } from "react-router";
 import DataContext from "../../contexts/DataContext";
 import { NavLink } from "react-router-dom";
 import {toast} from 'react-toastify';
+
 const Login = () => {
   const { loginState, setLoginState } = useContext(DataContext);
 
@@ -71,17 +72,22 @@ const Login = () => {
     })
   }
   const sendLink = (userEmail) => {
+    const id = toast.loading("Please wait...");
     const forgetPassEndpt = "/api/password/forget/"
 
-    axiosInstance.post(forgetPassEndpt, userEmail)
+    setTimeout(()=>{
+      axiosInstance.post(forgetPassEndpt, userEmail)
       .then((response) => {
-        alert(response.data.message);
         navigate("/login")
         document.getElementsByClassName("closebtn")[0].click();
+        toast.update(id, { render: response.data.message, type: "success", isLoading: false, autoClose:3000 })
       })
       .catch((error) => {
-        alert(error.response.data.error);
+        toast.update(id, { render: error.response.data.error, type: "error", isLoading: false, autoClose:3000 })
+        setUserEmail(defaultEmail)
       })
+    }, 1000)
+    
   }
 
   const handleForgotPassword = (e) => {
@@ -170,7 +176,7 @@ const Login = () => {
             <div class="modal-body">
               <div class="">
                 <label for="emailInput " class="form-label">Email address</label>
-                <input type="email" class="form-control input-style" id="emailInput" placeholder="" onChange={handleEmailChange} name="email" />
+                <input type="email" class="form-control input-style" id="emailInput" placeholder="" onChange={handleEmailChange} name="email"value={userEmail.email} />
               </div>
             </div>
             <div class="modal-footer">
