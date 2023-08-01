@@ -34,7 +34,7 @@
    min-height: 15rem;
    height: 350px;
    background-color: rgba(255,255,255,0.01);
-   color: #0d6efd;
+   color: white;
    backdrop-filter: blur(5px);
    border: 3px solid rgba(255,255,255, 0.1);
    /* border:3px solid #212451;; */
@@ -63,7 +63,7 @@
     color: white;
     background-color: #0b0e1e;
     border-radius: 7px;
-    border: 3px solid #212451;
+    border: 2px solid #212451;
     padding: auto 0px;
     margin: 14px 40px;
     
@@ -114,7 +114,7 @@
  }
  .modal-header h4{
     margin-bottom: 0;
-    padding: 0 28px;
+    padding: 0 8px;
    
  }
  
@@ -135,10 +135,10 @@
   }
   
   /* Track */
-  ::-webkit-scrollbar-track {
+  /* ::-webkit-scrollbar-track {
     background: black;
    
-  }
+  } */
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
@@ -159,7 +159,11 @@
     text-decoration: none;
     margin: 20px 10px;
  }
-
+ .mbtn.active{
+    border: solid white;
+    border-width: 0px 2px 0px 0;
+    transition: ease-in-out 0.2s;
+ }
 
  .mbtn:focus{
     border: solid white;
@@ -170,17 +174,13 @@
  @media (max-width: 400px) {
     .modal-body{
         flex-direction: column;
-        margin: 6px;
+        margin: 4px;
     }
     .modal-content{
-
-        margin: 28px;
-        width: auto;
+        min-height: 350px;
         text-align: justify;
     }
-    .card{
-        margin: 70px 20px;
-    }
+   
     .mbtn{
         padding: 5px 7px;
        margin-top: 0px;
@@ -200,14 +200,19 @@
         color: #0d6efd;
         transition: border-width ease-in-out 0.1s;
      }
-
+     .mbtn.active{
+        border: solid #0d6efd;
+        border-width: 0px 0px 2px 0;
+        color: #0d6efd;
+        transition: border-width ease-in-out 0.1s;
+     }
      .eventModal{
-        position: absolute;
-        margin-top: 2vh;
+        position:relative;
+        font-size: 14px;
     }
 
     .contactSection{
-        margin-top: 0%;
+        margin-top: 25%;
         text-align: start;
     }
  }
