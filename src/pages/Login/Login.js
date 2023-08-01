@@ -120,7 +120,7 @@ const Login = () => {
                 </small>
               </div>
             </div>
-            <div className="input-group mb-4">
+            <div className="input-group mb-3">
               <button
                 className="btn btn-lg btn1 w-100 fs-6"
                 type="submit"
@@ -149,7 +149,7 @@ const Login = () => {
         </div>
       </div>
 
-      <div class="modal fade resePasswordModal" id="resetPasswordModal" tabindex="-1" aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
+      <div class="modal fade resetPasswordModal" id="resetPasswordModal" tabindex="-1" aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content bg-dark text-light">
             <div class="modal-header">
@@ -157,7 +157,7 @@ const Login = () => {
               <button type="button" class="btn-close closebtn" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <div class="mb-3">
+              <div class="">
                 <label for="emailInput " class="form-label">Email address</label>
                 <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" onChange={handleEmailChange} name="email" />
               </div>

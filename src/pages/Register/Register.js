@@ -188,7 +188,7 @@ const Register = () => {
 
             <div className="input-group mb-2">
               <small>
-                <div class="form-check">
+                <div class="form-check ms-1">
                   <input
                     class="form-check-input"
                     type="checkbox"

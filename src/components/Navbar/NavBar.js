@@ -58,7 +58,7 @@ const NavBar = () => {
                 
                 <NavLink
                   to="/"
-                  className="text-decoration-none nav-link"
+                  className="text-decoration-none nav-link w-100 navitem"
                 >
                   Home
                 </NavLink>
@@ -67,7 +67,7 @@ const NavBar = () => {
               <li class="nav-item text-light mx-2">
                 <NavLink
                   to="/events"
-                  className="text-decoration-none nav-link"
+                  className="text-decoration-none nav-link w-100 navitem"
                 >
                   Events
                 </NavLink>
@@ -76,7 +76,7 @@ const NavBar = () => {
               <li class="nav-item text-light mx-2">
                 <NavLink
                   to="/aboutus"
-                  className="text-decoration-none nav-link"
+                  className="text-decoration-none nav-link w-100 navitem"
                 >
                   About Us
                 </NavLink>
@@ -85,7 +85,7 @@ const NavBar = () => {
               <li class="nav-item text-light mx-2">
                 <NavLink
                   to="/contactus"
-                  className="text-decoration-none nav-link"
+                  className="text-decoration-none nav-link w-100 navitem"
                 >
                   Contact Us
                 </NavLink>
@@ -94,7 +94,7 @@ const NavBar = () => {
               <li class={`nav-item text-light mx-2 ${loginState ? hidingcss : ""}`}>
                 <NavLink
                   to="/login"
-                  className="text-decoration-none nav-link"
+                  className="text-decoration-none nav-link w-100 navitem"
                 >
                   Login
                 </NavLink>
@@ -104,7 +104,7 @@ const NavBar = () => {
               onClick={handleLogout}>
                 <NavLink
                   to="/login"
-                  className="text-decoration-none nav-link"
+                  className="text-decoration-none nav-link w-100 navitem"
                 >
                   Logout
                 </NavLink>
