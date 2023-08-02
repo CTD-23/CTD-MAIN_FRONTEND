@@ -3,7 +3,7 @@
     position: absolute;
     margin-top: -10vh;
     font-size: 15px;
-    word-spacing: 5px;
+    word-spacing: 3px;
     line-height: 1.5rem;
 }
 
@@ -64,9 +64,9 @@
 
 .detail{
     color: white;
-    background-color: #0b0e1e;
+    background-color: #030418;
     border-radius: 7px;
-    border: 2px solid #212451;
+    border: 2px solid #25295a;
     padding: auto 0px;
     margin: 14px 40px;
     
@@ -131,30 +131,7 @@
     overflow-y: scroll;
     padding: 2px;
  }
- /* width */
-::-webkit-scrollbar {
-    width: 7px;
-    
-  }
-  
-  /* Track */
-  /* ::-webkit-scrollbar-track {
-    background: black;
-   
-  } */
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #015560;
-    border: 1px solid;
-    border-radius: 5px;
  
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgb(168, 1, 168);
-    border: 1px solid aqua;
-  }
  .mbtn{
     text-align: center;
     border-radius: 0px;
