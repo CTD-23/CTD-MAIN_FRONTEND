@@ -21,9 +21,11 @@ const Footer = () => {
           </div>
 
           <div className="col-12 col-sm-4 text-center text-sm-end d-none d-sm-block px-sm-5 p-0 mt-2">
-            <i className="bi-linkedin mx-2"></i>
-            <i className="bi-instagram mx-2"></i>
-            <i className="bi-facebook mx-2"></i>
+
+            <a href='https://www.linkedin.com/company/pisbieee' target='blank'><i className="bi-linkedin mx-2 footericom"></i></a>
+            <a href='https://www.instagram.com/pictieee' target='blank'><i className="bi-instagram mx-2 footericom"></i></a>
+            <a href='https://www.facebook.com/pictieee' target='blank'><i className="bi-facebook mx-2 footericom"></i></a>
+            
           </div>
         </div>
       </div>
