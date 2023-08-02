@@ -3,7 +3,7 @@ import "./AboutUs.css";
 
 const AboutUs = () => {
   return (
-    <div>
+    <div className='fade-in'>
       <div class="container text-center  p-sm-0 p-4  pb-sm-1 text-white">
 
         <img class="img-fluid ctd-logo py-5 " src="https://i.postimg.cc/yNMmy6CD/ctdlogo.png" alt="" />

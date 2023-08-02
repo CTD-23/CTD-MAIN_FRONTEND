@@ -25,7 +25,7 @@ function App() {
 
         <ToastContainer theme="dark" className="mt-5"/>
         
-        <div>
+        <div  className="mostly-customized-scrollbar">
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/aboutus" element={<AboutUs />} />

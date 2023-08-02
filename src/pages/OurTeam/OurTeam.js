@@ -7,7 +7,7 @@ import "./OurTeam.css";
 const OurTeam = () => {
 
   return (
-    <div className="container">
+    <div className="container fade-in">
       <h2 className="text-white ourTeamTitle text-center fade-in mt-4 mt-sm-3 mb-0 mb-sm-0 fs-1">Who we are</h2>
       <div className="container p-3">
         <div className="container-fluid p-sm-4 p-2 ">

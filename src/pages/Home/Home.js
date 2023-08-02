@@ -7,7 +7,7 @@ const Home = () => {
       <div class="container1">
         <div class="sky">
           <div class="text">
-            <div class="text-center logobox">
+            <div class="text-center logobox fade-in">
               <img src="https://i.postimg.cc/yNMmy6CD/ctdlogo.png" class="logoImg" />
             </div>
           </div>

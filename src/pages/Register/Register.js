@@ -97,7 +97,7 @@ const Register = () => {
   // }
 
   return (
-    <div>
+    <div className="fade-in">
       <div className="mt-0 p-sm-0 p-sm-1 ">
         <div className="container cont12 text-white p-3 p-sm-3 px-sm-4 mt-sm-0 log-style">
           <form onSubmit={submitDetails}>

@@ -95,7 +95,7 @@ const Login = () => {
   }
 
   return (
-    <div>
+    <div className="fade-in">
 
       <div className="mt-sm-5 mt-0">
         <div className="container cont text-white p-4 p-sm-3 log-style">
