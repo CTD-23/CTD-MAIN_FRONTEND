@@ -6,11 +6,11 @@ import { events } from './EventData'
 const Events = () => {
   
   return (
-    < div className='fade-in'>
-      <h1 class=" text-center h12 fade-in">EVENTS</h1>
+    < >
+      <h1 className=" text-center h12 fade-in">EVENTS</h1>
 
     { (
-      <div class="cardc mb-sm-5">
+      <div className="cardc mb-sm-5">
         {
           events.map((event)=>{
             return <EventsCard
@@ -31,7 +31,7 @@ const Events = () => {
 
     }
       
-    </div>
+    </>
   )
 }
 

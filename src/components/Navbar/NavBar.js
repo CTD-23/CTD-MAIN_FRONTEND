@@ -31,17 +31,17 @@ const NavBar = () => {
   
   return (
     <>
-      <nav class="navbar navbar-expand-lg navb navbar-dark text-light p-sm-2 p-2">
-        <div class="container-fluid">
-          <NavLink class="navbar-brand" to="/">
+      <nav className="navbar navbar-expand-lg navb navbar-dark text-light p-sm-2 p-2">
+        <div className="container-fluid">
+          <NavLink className="navbar-brand" to="/">
             <img
               src="https://i.postimg.cc/rFvmtXSY/pisb.png"
               alt=""
-              class="img-style"
+              className="img-style"
             />
           </NavLink>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -49,12 +49,12 @@ const NavBar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
+          <div className="collapse navbar-collapse" id="navbarNav">
             
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item text-light mx-2">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item text-light mx-2">
                 
                 <NavLink
                   to="/"
@@ -64,7 +64,7 @@ const NavBar = () => {
                 </NavLink>
               </li>
 
-              <li class="nav-item text-light mx-2">
+              <li className="nav-item text-light mx-2">
                 <NavLink
                   to="/events"
                   className="text-decoration-none nav-link w-100 navitem"
@@ -73,7 +73,7 @@ const NavBar = () => {
                 </NavLink>
               </li>
 
-              <li class="nav-item text-light mx-2">
+              <li className="nav-item text-light mx-2">
                 <NavLink
                   to="/aboutus"
                   className="text-decoration-none nav-link w-100 navitem"
@@ -82,7 +82,7 @@ const NavBar = () => {
                 </NavLink>
               </li>
 
-              <li class="nav-item text-light mx-2">
+              <li className="nav-item text-light mx-2">
                 <NavLink
                   to="/contactus"
                   className="text-decoration-none nav-link w-100 navitem"
@@ -91,7 +91,7 @@ const NavBar = () => {
                 </NavLink>
               </li>
 
-              <li class={`nav-item text-light mx-2 ${loginState ? hidingcss : ""}`}>
+              <li className={`nav-item text-light mx-2 ${loginState ? hidingcss : ""}`}>
                 <NavLink
                   to="/login"
                   className="text-decoration-none nav-link w-100 navitem"
@@ -100,7 +100,7 @@ const NavBar = () => {
                 </NavLink>
               </li>
 
-              <li class={`nav-item text-light mx-2 ${!loginState ? hidingcss : ""}`}
+              <li className={`nav-item text-light mx-2 ${!loginState ? hidingcss : ""}`}
               onClick={handleLogout}>
                 <NavLink
                   to="/login"

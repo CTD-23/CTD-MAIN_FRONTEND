@@ -165,22 +165,22 @@ const Login = () => {
 
         </div>
         <div className="container p-3">
-        <div class="modal fade resetPasswordModal" id="resetPasswordModal" tabindex="-1" aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content bg-dark text-light">
-            <div class="modal-header">
-              <h5 class="modal-title" id="resetPasswordModalLabel">Reset Password</h5>
-              <a class="close bg-none dark text-white" data-bs-dismiss="modal"
-                aria-label="Close"><span aria-hidden="true" class="closebtn" >&#xF659;</span></a>
+        <div className="modal fade resetPasswordModal" id="resetPasswordModal" tabindex="-1" aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content bg-dark text-light">
+            <div className="modal-header">
+              <h5 className="modal-title" id="resetPasswordModalLabel">Reset Password</h5>
+              <a className="close bg-none dark text-white" data-bs-dismiss="modal"
+                aria-label="Close"><span aria-hidden="true" className="closebtn" >&#xF659;</span></a>
             </div>
-            <div class="modal-body">
-              <div class="">
-                <label for="emailInput " class="form-label">Email address</label>
-                <input type="email" class="form-control input-style" id="emailInput" placeholder="" onChange={handleEmailChange} name="email"value={userEmail.email} />
+            <div className="modal-body">
+              <div className="">
+                <label for="emailInput " className="form-label">Email address</label>
+                <input type="email" className="form-control input-style" id="emailInput" placeholder="" onChange={handleEmailChange} name="email"value={userEmail.email} />
               </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" onClick={handleForgotPassword}>Send Link</button>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-primary" onClick={handleForgotPassword}>Send Link</button>
             </div>
           </div>
         </div>

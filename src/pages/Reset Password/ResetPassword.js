@@ -50,18 +50,18 @@ const ResetPassword = () => {
 
     return (
         <>
-            <div class="container p-sm-4 p-3 border border-1 resetPassContainer shadow-lg forget text-light fade-in">
-                <div class="fw-1 resetpass text-center mb-4">Reset Password</div>
+            <div className="container p-sm-4 p-3 border border-1 resetPassContainer shadow-lg forget text-light fade-in">
+                <div className="fw-1 resetpass text-center mb-4">Reset Password</div>
                 <form action="" onSubmit={submitNewPassword}>
-                    <div class="my-3">
-                        <label class="form-label">New Password</label>
-                        <input type="password" class="form-control input-style" name='password' onChange={handleChange} value={newPassword.password}/>
+                    <div className="my-3">
+                        <label className="form-label">New Password</label>
+                        <input type="password" className="form-control input-style" name='password' onChange={handleChange} value={newPassword.password}/>
                     </div>
-                    <div class="my-3">
-                        <label class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control input-style" name='confirmPassword' onChange={handleChange} value={newPassword.confirmPassword}/>
+                    <div className="my-3">
+                        <label className="form-label">Confirm Password</label>
+                        <input type="password" className="form-control input-style" name='confirmPassword' onChange={handleChange} value={newPassword.confirmPassword}/>
                     </div>
-                    <button type="submit" class="btn btn-primary w-100 my-3 btn1 btn2">Reset Password</button>
+                    <button type="submit" className="btn btn-primary w-100 my-3 btn1 btn2">Reset Password</button>
                 </form>
             </div>
         </>

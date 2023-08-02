@@ -10,7 +10,6 @@
 }
 
 .effect1:hover {
-    /* transform: scale(1.07); */
     box-shadow: 0 5px 15px rgba(227, 188, 255, 0.4);
 }
 
