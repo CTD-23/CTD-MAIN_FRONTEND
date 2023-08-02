@@ -98,7 +98,7 @@ const EventsCard = (props) => {
         </div>
       </div>
       <div class="card card12 ">
-        <img class="m-auto img-fluid img-fluid12 p-2" src={props.imageUrl} alt="NTH logo" />
+        <img class="m-auto img-fluid img-fluid12 p-2 fade-in" src={props.imageUrl} alt="NTH logo" />
         <div class="card-body card-body12">
           <h5 class="card-title fs-4 text-center">{props.shortname}</h5>
           <div class="btnc">
