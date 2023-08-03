@@ -51,8 +51,8 @@ const EventsCard = (props) => {
           <div className="modal-content modal-content1 text-light">
             <div className="modal-header modal-header1 mb-0">
               <h4 className='ms-0'>{props.eventName}</h4>
-              <a className="close bg-none dark text-white" data-bs-dismiss="modal"
-                aria-label="Close"><span aria-hidden="true" className="closebtn" >&#xF659;</span></a>
+              <span className="close bg-none dark text-white" data-bs-dismiss="modal"
+                aria-label="Close"><span aria-hidden="true" className="closebtn" >&#xF659;</span></span>
             </div>
             <div className="modal-body modal-body1  d-flex">
               <div className="eventCardNav nav flex-sm-column flex-row justify-content-between nav-pills m-0"
