@@ -9,7 +9,7 @@ import {toast} from 'react-toastify';
 
 const Login = () => {
   const { loginState, setLoginState } = useContext(DataContext);
-
+  if(loginState){};
   const defaultCredentials = {
     Username: "",
     password: "",

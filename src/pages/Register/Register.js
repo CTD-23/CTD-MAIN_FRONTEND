@@ -8,6 +8,7 @@ import {toast} from 'react-toastify';
 import { NavLink } from "react-router-dom";
 const Register = () => {
   const { loginState, setLoginState } = useContext(DataContext);
+  if(loginState){};
   // const [isJunior,setIsJunior] = useState(false);
   const defaultDetails = {
     first_name: "",
