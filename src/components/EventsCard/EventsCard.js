@@ -43,6 +43,8 @@ const EventsCard = (props) => {
   }
 
   const obj = props.rules.split("\n");
+  
+  const contact1 = props.contact.split("\n")
 
 
   return (
@@ -87,9 +89,10 @@ const EventsCard = (props) => {
                     }
                   </p>
                 </div>
-                <div className="tab-pane fade" id={`v-pills-message-${props.shortname}`}
+                <div className="tab-pane fade contactSection" id={`v-pills-message-${props.shortname}`}
                   role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                  <p id="Save" className='contactSection'>{props.contact}</p>
+                  <p id="Save" className='ms-4'>{contact1[1]}</p>
+                  <p id="Save" className='ms-4'>{contact1[0]}</p>
                 </div>
               </div>
             </div>

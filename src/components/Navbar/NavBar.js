@@ -31,7 +31,7 @@ const NavBar = () => {
   
   return (
     <>
-      <nav className="navbar navbar-expand-lg navb navbar-dark text-light p-sm-2 p-2">
+      <nav className="navbar navbar-expand-lg navb navbar-dark text-light p-sm-2 p-2 z-3">
         <div className="container-fluid">
             <a href="https://pictieee.in/" target="blank"><img
               src="https://i.postimg.cc/rFvmtXSY/pisb.png"

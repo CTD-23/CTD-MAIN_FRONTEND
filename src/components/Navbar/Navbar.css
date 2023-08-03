@@ -1,6 +1,6 @@
 .navb{
     background-color: hsl(231, 34%, 12%);
-    
+    z-index: 3 !important;
 }
 
 .img-style{

@@ -14,8 +14,10 @@ import DataContext from "./contexts/DataContext";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
+import axiosInstance from "./utils/apis";
+
 function App() {
-  const [loginState, setLoginState] = useState(localStorage.getItem("isLogin"))
+  const [loginState, setLoginState] = useState("");
   return (
     <div>
       <DataContext.Provider value={{loginState, setLoginState}}>

@@ -4,11 +4,11 @@ import './Home.css'
 const Home = () => {
   return (
     <>
-      <div className="container1">
+      <div className="container1 z-0" >
         <div className="sky">
           <div className="text">
             <div className="text-center logobox fade-in">
-              <img src="https://i.postimg.cc/yNMmy6CD/ctdlogo.png" className="logoImg" />
+              <img alt="" src="https://i.postimg.cc/yNMmy6CD/ctdlogo.png" className="logoImg" />
             </div>
           </div>
           <div className="stars"></div>
