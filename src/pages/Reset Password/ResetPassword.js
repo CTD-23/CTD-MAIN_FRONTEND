@@ -50,7 +50,7 @@ const ResetPassword = () => {
 
     return (
         <>
-            <div className="container p-sm-4 p-3 border border-1 resetPassContainer shadow-lg forget text-light fade-in">
+            <div className="container p-sm-4 p-3 border border-1 resetPassContainer shadow-lg forget text-light">
                 <div className="fw-1 resetpass text-center mb-4">Reset Password</div>
                 <form action="" onSubmit={submitNewPassword}>
                     <div className="my-3">

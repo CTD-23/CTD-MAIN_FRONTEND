@@ -2,6 +2,7 @@ import React from 'react'
 import "./EventsCard.css"
 import axiosInstance from '../../utils/apis'
 import { useNavigate } from 'react-router'
+
 const EventsCard = (props) => {
 
   const navigate = useNavigate();
@@ -42,9 +43,6 @@ const EventsCard = (props) => {
 
   return (
     <>
-
-
-
       <div className="modal fade eventModal" id={`${props.shortname}`} tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog1" role="document">
@@ -57,7 +55,7 @@ const EventsCard = (props) => {
             <div className="modal-body modal-body1  d-flex">
               <div className="eventCardNav nav flex-sm-column flex-row justify-content-between nav-pills m-0"
                 id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a className=" mbtn active" id="v-pils-home-tab" data-bs-toggle="pill"
+                <a className="mbtn active" id="v-pils-home-tab" data-bs-toggle="pill"
                   href={`#v-pills-home-${props.shortname}`} role="tab" aria-controls="v-pills-home"
                   aria-selected="true">Details</a>
                 <a className=" mbtn" id="v-pills-profile-tab" data-bs-toggle="pill"
