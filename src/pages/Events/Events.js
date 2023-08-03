@@ -14,6 +14,7 @@ const Events = () => {
         {
           events.map((event)=>{
             return <EventsCard
+            key = {event.key}
             imageUrl={event.imageUrl}
             shortname = {event.shortname}
             eventName = {event.eventName}

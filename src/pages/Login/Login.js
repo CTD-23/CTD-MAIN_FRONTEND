@@ -165,7 +165,7 @@ const Login = () => {
 
         </div>
         <div className="container p-3">
-        <div className="modal fade resetPasswordModal" id="resetPasswordModal" tabindex="-1" aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
+        <div className="modal fade resetPasswordModal" id="resetPasswordModal" tabIndex="-1" aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content bg-dark text-light">
             <div className="modal-header">
@@ -175,7 +175,7 @@ const Login = () => {
             </div>
             <div className="modal-body">
               <div className="">
-                <label for="emailInput " className="form-label">Email address</label>
+                <label htmlFor="emailInput " className="form-label">Email address</label>
                 <input type="email" className="form-control input-style" id="emailInput" placeholder="" onChange={handleEmailChange} name="email"value={userEmail.email} />
               </div>
             </div>

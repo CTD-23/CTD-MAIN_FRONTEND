@@ -177,14 +177,14 @@ const Register = () => {
               <label>Category : </label>
               <div class="form-check mx-5 ms-5">
                 <input class="form-check-input" type="radio" id="flexRadioDefault1" name="isJunior" onClick={handleChange}/>
-                <label class="form-check-label" for="flexRadioDefault1">
+                <label class="form-check-label" htmlFor="flexRadioDefault1">
                   Junior
                 </label>
               </div>
 
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="isJunior" id="flexRadioDefault2"  onClick={handleChange}/>
-                <label class="form-check-label" for="flexRadioDefault2">
+                <label class="form-check-label" htmlFor="flexRadioDefault2">
                   Senior
                 </label>
               </div>
@@ -202,7 +202,7 @@ const Register = () => {
                     id="flexCheckDefault"
                     onClick={handleChange}
                   />
-                  <label class="form-check-label" for="flexCheckDefault">
+                  <label class="form-check-label" htmlFor="flexCheckDefault">
                     Junior
                   </label>
                 </div>

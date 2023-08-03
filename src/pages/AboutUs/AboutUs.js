@@ -27,7 +27,7 @@ const AboutUs = () => {
 
         <div className="row my-5 py-3 py-sm-1">
           <div className="col d-flex justify-content-center col-12 col-lg-6 mb-sm-5 mb-3">
-            <img className="img-fluid" src="https://ctd.pictieee.in/static/media/ieee.afc7672e5bd9b388828d.png" alt="" style={{"max-width" : "50%" }} />
+            <img className="img-fluid" src="https://ctd.pictieee.in/static/media/ieee.afc7672e5bd9b388828d.png" alt="" style={{maxWidth : "50%" }} />
           </div>
 
           <div className="col col-12 col-lg-6 content">
@@ -40,7 +40,7 @@ const AboutUs = () => {
         <div className="row d-flex flex-row-reverse my-5 py-3">
 
           <div className="col d-flex justify-content-center col-12 col-lg-6">
-            <img className="img-fluid" src="https://ctd.pictieee.in/static/media/credenz.027d8cf4726375a177d8.jpg" alt="" style={{"max-width": "65%", "max-height": "85%"}} />
+            <img className="img-fluid" src="https://ctd.pictieee.in/static/media/credenz.027d8cf4726375a177d8.jpg" alt="" style={{maxWidth: "65%", maxHeight: "85%"}} />
           </div>
 
           <div className="col col-12 col-lg-6 content">
@@ -55,7 +55,7 @@ const AboutUs = () => {
         <div className="row my-5 py-3">
 
           <div className="col d-flex justify-content-center col-12 col-lg-6">
-            <img className="img-fluid" src="https://ctd.pictieee.in/static/media/ping.94d36c92d02619928114.jpg" alt="" style={{"max-width": "50%", "max-height": "85%"}} />
+            <img className="img-fluid" src="https://ctd.pictieee.in/static/media/ping.94d36c92d02619928114.jpg" alt="" style={{maxWidth: "50%", maxHeight: "85%"}} />
           </div>
 
           <div className="col col-12 col-lg-6 content">

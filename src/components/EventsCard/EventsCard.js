@@ -2,7 +2,7 @@ import React from 'react'
 import "./EventsCard.css"
 import axiosInstance from '../../utils/apis'
 import { useNavigate } from 'react-router'
-
+import Rule from '../Rule/Rule'
 
 const EventsCard = (props) => {
 
@@ -42,9 +42,10 @@ const EventsCard = (props) => {
 
   const obj = props.rules.split("\n");
 
+
   return (
     <>
-      <div className="modal fade eventModal" id={`${props.shortname}`} tabindex="-1" role="dialog"
+      <div className="modal fade eventModal" id={`${props.shortname}`} tabIndex="-1" role="dialog"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog1" role="document">
           <div className="modal-content modal-content1 text-light">
@@ -78,11 +79,8 @@ const EventsCard = (props) => {
                   aria-labelledby="v-pills-profile-tab">
                   <p id="Rules">
                     {
-                      obj.map((rule) => {
-                        return <span>
-                          {rule}
-                          <br />
-                        </span>
+                      obj.map((rule, index) => {
+                        return  <Rule key ={index} rule={rule} />
                       })
                     }
                   </p>

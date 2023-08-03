@@ -5,3 +5,15 @@
 .footericom{
     color: white;
 }
+
+.footerText{
+    text-decoration: none;
+    font-family:'Poppins','san';
+    color: white;
+}
+.footerText:hover{
+    text-decoration: none;
+    font-family:'Poppins','san';
+    color: white;
+
+}

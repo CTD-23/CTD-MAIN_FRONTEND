@@ -7,8 +7,8 @@ const Footer = () => {
       <footer className="fixed-bottom p-0 foot fw-light fs-6">
         <div className="text-light ">
           <div className="row">
-            <div className=" col-12 col-sm-4 text-center text-sm-start my-2 my-sm-2 d-none d-sm-block px-sm-5">
-              PICT IEEE Student Branch
+            <div className=" col-12 col-sm-4 text-center text-sm-start my-2 my-sm-2 d-none d-sm-block px-sm-5 ">
+            <a href='https://pictieee.in/' className='footerText' target='blank'>PICT IEEE STUDENT BRANCH</a>
             </div>
 
             <div className="col-12 col-sm-4 text-center my-2 my-sm-2">

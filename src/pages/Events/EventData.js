@@ -14,6 +14,7 @@ export const events=[
     // },
     
     {
+        key:1,
         eventName:`NCC`,
         shortname : `NCC`,
         imageUrl:`https://i.postimg.cc/SKQq1t7X/datawiz.png`,
@@ -27,6 +28,7 @@ export const events=[
         contact:`Shreya Bansod : +91 9876543210`
     },
     {
+        key:2,
         eventName:`Reverse Coding`,
         shortname : `RC`,
         imageUrl:`https://i.postimg.cc/SKQq1t7X/datawiz.png`,
@@ -41,6 +43,7 @@ export const events=[
     },
     
     {
+        key:3,
         eventName:`DataWiz`,
         shortname:`Datawiz`,
         imageUrl:`https://i.postimg.cc/SKQq1t7X/datawiz.png`,
