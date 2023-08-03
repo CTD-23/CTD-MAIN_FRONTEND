@@ -3,6 +3,7 @@ import "./EventsCard.css"
 import axiosInstance from '../../utils/apis'
 import { useNavigate } from 'react-router'
 
+
 const EventsCard = (props) => {
 
   const navigate = useNavigate();
@@ -115,3 +116,4 @@ const EventsCard = (props) => {
 export default EventsCard
 
 // "https://i.postimg.cc/SKQq1t7X/datawiz.png"
+
