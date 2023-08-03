@@ -3,6 +3,7 @@ import "./EventsCard.css"
 import axiosInstance from '../../utils/apis'
 import { useNavigate } from 'react-router'
 import Rule from '../Rule/Rule'
+import {toast} from 'react-toastify';
 
 const EventsCard = (props) => {
 
@@ -10,7 +11,7 @@ const EventsCard = (props) => {
 
   const registerEvent = (e) => {
 
-
+    const id = toast.loading("Please wait...");
     const eventName = e.target.name;
     const email = localStorage.getItem("userEmail")
     const userEmail = {
@@ -22,14 +23,15 @@ const EventsCard = (props) => {
     axiosInstance.post(eventEndpoint, userEmail)
       .then((response) => {
         if (response.data.success) {
-          alert(response.data.message)
+          // alert(response.data.message)
+          toast.update(id, { render: response.data.message, type: "success", isLoading: false, autoClose:3000 })
         }
         else {
-          alert("Registration Failed")
+          toast.update(id, { render: response.data.message, type: "error", isLoading: false, autoClose:3000 })
         }
       })
       .catch((error) => {
-        alert(error.response.data.error)
+        toast.update(id, { render: error.response.data.error, type: "error", isLoading: false, autoClose:3000 })
         if (error.response.status === 401) {
           navigate("/login")
         }

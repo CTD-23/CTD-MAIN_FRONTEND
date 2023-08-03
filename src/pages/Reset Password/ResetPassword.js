@@ -29,12 +29,10 @@ const ResetPassword = () => {
         setTimeout(()=>{
             axiosInstance.put(resetPassEndpoint, updatedPassword)
             .then((response) => {
-                // alert("Password changed successfully");
-                toast.update(id, { render: response.data.message, type: "success", isLoading: false, autoClose:3000 })
+                toast.update(id, { render: "Password changed successfully", type: "success", isLoading: false, autoClose:3000 })
                 navigate("/login")
             })
             .catch((error) => {
-                // alert(error.response.data.error)
                 toast.update(id, { render: error.response.data.error, type: "error", isLoading: false, autoClose:3000 })
                 setNewPassword(defaultValues)
             })

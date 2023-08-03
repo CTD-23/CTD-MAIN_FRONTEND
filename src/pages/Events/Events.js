@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react'
 import "./Events.css"
 import EventsCard from '../../components/EventsCard/EventsCard'
-import axiosInstance from '../../utils/apis'
 import { events } from './EventData'
 const Events = () => {
   

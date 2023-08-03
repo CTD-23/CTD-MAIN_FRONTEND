@@ -1,6 +1,5 @@
-import React, { useCallback, useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import "./login.css";
-import axios from "axios";
 import { useState } from "react";
 import axiosInstance from "../../utils/apis";
 import { useNavigate } from "react-router";
@@ -21,7 +20,7 @@ const Login = () => {
     const name = event.target.name;
     const value = event.target.value;
 
-    setLoginCredentials({ ...loginCredentials, [name]: value });
+    setLoginCredentials({ ...loginCredentials, [name]: value.trim() });
   }
 
   const navigate = useNavigate();
@@ -128,9 +127,9 @@ const Login = () => {
             <div className="input-group mb-3 d-flex justify-content-between">
               <div>
                 <small>
-                  <a href="#" className="forgot hover-link" data-bs-toggle="modal" data-bs-target="#resetPasswordModal">
+                  <span className="forgot hover-link" data-bs-toggle="modal" data-bs-target="#resetPasswordModal">
                     Forgot Password?
-                  </a>
+                  </span>
                 </small>
               </div>
             </div>
@@ -170,8 +169,8 @@ const Login = () => {
           <div className="modal-content bg-dark text-light">
             <div className="modal-header">
               <h5 className="modal-title" id="resetPasswordModalLabel">Reset Password</h5>
-              <a className="close bg-none dark text-white" data-bs-dismiss="modal"
-                aria-label="Close"><span aria-hidden="true" className="closebtn" >&#xF659;</span></a>
+              <span className="close bg-none dark text-white" data-bs-dismiss="modal"
+                aria-label="Close"><span aria-hidden="true" className="closebtn" >&#xF659;</span></span>
             </div>
             <div className="modal-body">
               <div className="">

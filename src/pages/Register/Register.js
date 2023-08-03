@@ -28,7 +28,7 @@ const Register = () => {
     const value = e.target.value;
     const checked = e.target.checked;
 
-    setUserDetails({ ...userDetails, [name]: value });
+    setUserDetails({ ...userDetails, [name]: value.trim() });
 
     if (name === 'isJunior') {
       setUserDetails({ ...userDetails, [name]: checked });
