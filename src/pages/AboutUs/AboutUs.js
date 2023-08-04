@@ -40,7 +40,7 @@ const AboutUs = () => {
         <div className="row d-flex flex-row-reverse my-5 py-3">
 
           <div className="col d-flex justify-content-center col-12 col-lg-6">
-            <img className="img-fluid" src="https://ctd.pictieee.in/static/media/credenz.027d8cf4726375a177d8.jpg" alt="" style={{maxWidth: "65%", maxHeight: "85%"}} />
+            <img className="img-fluid" src="https://i.postimg.cc/j2sWFrBy/Snapinsta-app-346900783-2321428674713276-5522514512414463607-n-1080.jpg" alt="" style={{maxWidth: "65%", maxHeight: "85%"}} />
           </div>
 
           <div className="col col-12 col-lg-6 content">
@@ -55,7 +55,7 @@ const AboutUs = () => {
         <div className="row my-5 py-3">
 
           <div className="col d-flex justify-content-center col-12 col-lg-6">
-            <img className="img-fluid" src="https://ctd.pictieee.in/static/media/ping.94d36c92d02619928114.jpg" alt="" style={{maxWidth: "50%", maxHeight: "85%"}} />
+            <img className="img-fluid" src="https://i.postimg.cc/bwbzkBBP/Snapinsta-app-361242103-1885868671793079-6978845724989491072-n-1080.jpg" alt="" style={{maxWidth: "50%", maxHeight: "85%"}} />
           </div>
 
           <div className="col col-12 col-lg-6 content">

@@ -3,25 +3,32 @@ import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import axiosInstance from "../../utils/apis"
 import DataContext from "../../contexts/DataContext";
+import {toast} from 'react-toastify';
+import { useNavigate } from "react-router-dom";
 const NavBar = () => {
 
   const {loginState, setLoginState} = useContext(DataContext)
+  const navigate = useNavigate();
   const userLogout = () => {
+    const id = toast.loading("Please wait...");
     const userEmail = localStorage.getItem("userEmail")
     localStorage.removeItem("isLogin");
     localStorage.removeItem("userEmail");
 
     const logoutEndpoint = "/api/logout/"
-
     const logoutPayload = {"email" : userEmail}
-    axiosInstance.get(logoutEndpoint, logoutPayload)
-    .then((resposne)=>{
-      console.log(resposne.data)
-      setLoginState(false)
-    })
-    .catch((error)=>{
-      console.log(error);
-    })
+
+    setTimeout(()=>{
+      axiosInstance.get(logoutEndpoint, logoutPayload)
+      .then((resposne)=>{  
+        toast.update(id, { render: "Logged out successfully !", type: "success", isLoading: false, autoClose:3000 })
+        setLoginState(false)
+        navigate("/");
+      })
+      .catch((error)=>{
+        toast.update(id, { render: "Error occured", type: "error", isLoading: false, autoClose:3000 })
+      })},0)
+    
   }
   const handleLogout = (e) =>{
     userLogout();

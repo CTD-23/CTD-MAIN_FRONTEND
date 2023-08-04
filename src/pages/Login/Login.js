@@ -107,7 +107,7 @@ const Login = () => {
               <input
                 type="text"
                 className="form-control form-control-lg fs-6 input-style"
-                placeholder="&#xF32C;  Email address"
+                placeholder="&#xF32C;  Username"
                 name="Username"
                 onChange={handleChange}
                 value={loginCredentials.Username}
