@@ -21,9 +21,9 @@ const NavBar = () => {
     setTimeout(()=>{
       axiosInstance.get(logoutEndpoint, logoutPayload)
       .then((resposne)=>{  
-        toast.update(id, { render: "Logged out successfully !", type: "success", isLoading: false, autoClose:3000 })
+        toast.update(id, { render: "Logged out successfully !", type: "success", isLoading: false, autoClose:1000 })
         setLoginState(false)
-        navigate("/");
+        navigate("/login");
       })
       .catch((error)=>{
         toast.update(id, { render: "Error occured", type: "error", isLoading: false, autoClose:3000 })
